@@ -124,6 +124,20 @@ solar surface, (c) something? Superadiabaticity profile?
         \label{fig:fig1}}
 \end{figure}
 
+\section{Numerical Tools}
+I will use Dedalus, because it's awesome and it allows us to study many flexible atmospheres
+under many equation sets easily.
+
+I'll primarily use 2D simulations to get intuition about the answers I'm trying to solve,
+then verify them in 3D, as I did in my paper.  The sims shown there took about 3M CPU hours
+to complete, and I have access to an allocation of ~20M CPU hours / year on Pleiades, which
+means that I can complete a few projects of that scope within a year's time.
+
+Furthermore, recent work (Anders, Brown, \& Oishi 2018, submitted to PRFluids) has been
+done to use boundary value problems along with initial value problems to fast-forward
+the slow thermal evolution of these convective simulations.  This work was done in 
+Boussinesq convection but can be easily extended to stratified convection, and will greatly
+extend the number of simulations we will be capable of performing given our modest allocation.
 
 
 \section{Project 1: Internally heated convection}
@@ -137,11 +151,29 @@ are important to study, because the changing opacities in the interior of the so
 zone effectively act like an internal heating term, depositing energy and driving convection.
 
 We find that these systems essentially have the same input control parameters as simple polytropic
-convection (cite), but include a new parameter which determines the depth of the radiative zone
-below the convecting region.  We will do runs from low to high Ra for various values of the
-depth of the radiative zone and the magnitude of the internal heating to determine the evolved
-stratification of these systems and the magnitude of velocity power at the surface of these
-simulations.  We anticipate that we will see stuff like in Kapyla 2017.
+convection \citep{anders&brown2017}, which include the Rayleigh number (Ra, the strength of
+convective driving and amount of turbulence), the Prandtl number (Pr, the ratio of the thermal
+to viscous diffusivity), the characteristic superadiabaticity of the atmosphere (which sets the Mach
+number of the flows), and the depth of the atmosphere.  In the internally heated systems, we
+find that the magnitude of the internal heating directly relates to the superadiabaticity of the
+atmosphere, and thus Ma, but we must split up the depth into two parameters: the depth of the
+\emph{unstable} region, and the depth of the new \emph{stable} region.  In \citealt{anders&brown2017},
+we explored the effects of the magnitude of the superadiabaticity on the resulting convection,
+and found that -- except where the Mach number is very high -- it has almost no effect on the
+other properties of the convective flows.  
+
+In this project, we will focus on understanding how the depth of the atmosphere, and the amount
+of stratification felt by the flows, affects the resultant convection.  We will set the depth
+of the convection zone (to 1, 3, and then 5 density scale heights), and for each of these depths
+we will run simulations for shallow and deep radiative zones.  We will examine the evolved
+stratification of these atmospheres in order to determine where convection is driven and where
+it is not.  Preliminary results show that the so-called ``Deardorff zones'' present in the
+simulations of \citealt{kapyla&all2017} are also present in these simple simulations of
+internally heated convection and do not require complex forms of the conductivity to be achieved.
+We expect that the extent of these subadiabatic zones in which convection carries the flux can
+be determined \emph{a priori} in these simple simulations, but further work must be done.
+
+We're looking for the motions at the surface and also the stratification.
 
 \section{Project 2: Nonlinear EOS convection}
 Most studies of convection are driven either by the choice of fixed boundary conditions
@@ -150,6 +182,23 @@ the domain (internal heating).  Here we propose a project in which we utilize a 
 equation of state to represent the ionization / reionization of hydrogen near the surface of
 the Sun.  We examine the effects that this has on the driving boundary layer region near the
 top of the simulation, and we do blahblahblah.
+
+In order to carefully study the effects of the ionization of hydrogen, or other similar phase
+changes, we must first understand the reference state for such an atmosphere.  It will no longer
+simply be polytropic, as the nonlinear EOS rules out the simple polytropic assumption. Once the
+appropriate state which is in hydrostatic and thermal equilibrium despite this phase change is discovered,
+we will then carefully study the effects of the temperature of ionization (which will in turn
+determine its depth), and also the ionization energy of the transition.  In standard simulations
+of convection, the interactions of the flows with a hard boundary forms a thin boundary layer,
+which scales downwards as the diffusivities shrink, and this boundary generally drives convection.
+We suspect that we can create atmospheres with larger or smaller boundary layers than the natural
+thermal boundary length scale, which will nominally drive convection on different length scales
+than the natural one.  We are interested in seeing how these ``too large'' convective flows
+interact with their surroundings, and in seeing how the atmosphere naturally evolves in the presence
+of these flows.
+
+Things we can study: stratification of evolved solution.  Stable layers?  filling factors.
+Power spectrum.
 
 \begin{figure}[t!]
 \centering
@@ -162,8 +211,21 @@ top of the simulation, and we do blahblahblah.
 While it is convenient to use a constant conductivity (and thus opacity) in the energy
 equation, as this makes the interpretation of results very simple, this greatly 
 over-simplifies the form of radiative conductivity in natural systems like the Sun.
-In this project, we will carefully implement a kramer's opacity -- both fully nonlinear
-and initial condition based -- and we will do blahblahblah with it.
+In this project, we will carefully implement a kramer's opacity of the form
+$\kappa \propto T^3 / \rho$.  We will run experiments at low and high Mach number,
+some in which $\kappa$ is constant with time and some in which $\kappa$ is allowed to
+evolved with time.  We anticipate that at low Mach number, the deviations from the initial state
+will be small, and the fully nonlinear effects of this term will not be important.  At high
+Mach number, however, like the solar surface, we expect this term to vary significantly
+from the high temperature, low density upflows to the low temperature, high density downflows.
+
+We are curious to see if this more realistic form of the conductivity significantly changes
+the transport properties of the overall convection: does it affect the heat transport
+(Nu)?  How does the change in the adiabatic temperature gradient under this formulation
+change our intuition?  We can likely naturally have heavily driven regions and lightly
+driven regions of naturally-occuring, internally heated convection.  Our studies from project
+1 will help inform how to interpret the divergence of this flux term as an internal heating
+source.
 
 \section{Timeline of proposed work}
 \paragraph{Year 1:}
