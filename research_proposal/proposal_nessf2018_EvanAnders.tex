@@ -1,36 +1,34 @@
-\documentclass[aasms,12pt]{article}
-\usepackage{natbib}
-\setlength{\bibsep}{0pt plus 0.3ex}
-\usepackage[margin=1in]{geometry}
-\usepackage{sectsty}
+\documentclass[aps, pre, onecolumn, nofootinbib, notitlepage, groupedaddress, amsfonts, amssymb, amsmath, longbibliography]{revtex4-1}
+\usepackage{tabularx}
 \usepackage{graphicx}
-\usepackage{epstopdf}
-\usepackage[skip=2pt,font=small]{caption}
-\captionsetup{width=\textwidth}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\usepackage{bm}
+\usepackage{natbib}
+\usepackage{longtable}
+\LTcapwidth=0.87\textwidth
 
 
-%\usepackage{titlesec}
-%
-%\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}
-%\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
-%\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
-
-
-\sectionfont{\normalsize}
-%\usepackage{fullpage}
-
-
-%\citestyle{aa}
 \newcommand{\sol}{\ensuremath{\odot}}
 \newcommand{\RB}{Rayleigh-B\'{e}nard }
+\newcommand{\grad}{\ensuremath{\nabla}}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
 
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{} % sets both header and footer to nothing
 \renewcommand{\headrulewidth}{0pt}
-\cfoot{\thepage}
-\rfoot{\footnotesize{Evan H. Anders, NASA NESSF 2018}}
+%\cfoot{\thepage}
+%\rfoot{\footnotesize{Evan H. Anders, NASA NESSF 2018}}
 
 
 
@@ -41,20 +39,25 @@
    \vspace{0.4cm}
    \large{Evan H. Anders}\\
    \vspace{0.4cm}
-   \normalsize\textit{Advisor: Benjamin Brown}\\
-   \normalsize\textit{LASP, University of Colorado at Boulder}\\
+   \normalsize\textit{Advisor: Benjamin P. Brown}\\
+   \normalsize\textit{Laboratory for Atmospheric and Space Physics (LASP) \& University of Colorado at Boulder}\\
 \end{center}
 
 
-
-\abstract{Blah blah blah. This project supports objective 1.4 of NASA's 2014 Strategic Plan
+\begin{center}
+\begin{changemargin}{0.5in}{0.5in}
+Blah blah blah. This project supports objective 1.4 of NASA's 2014 Strategic Plan
 	and will assist in developing ``the
 	knowledge and capability to detect and predict extreme conditions in
-	space'' in accordance with NASA's overarching Heliophysics science goals.}
+	space'' in accordance with NASA's overarching Heliophysics science goals.
+\end{changemargin}
+\end{center}
+
+\vspace{-0.25in}
 
 
 
-\section{Introduction}
+\section{Background \& Motivation}
 The Sun exhibits active magnetism which cycles in magnitude every 11 years.
 This magnetism arises from an 
 organized dynamo seated in the turbulent plasma
@@ -66,46 +69,54 @@ power grids and aircraft operations as well as endangering astronauts and satell
 The motivation to understand the Sun's magnetism in our increasingly technological society
 is great.  A critical step in protecting our society from the Sun's magnetism is 
 to gain an understanding of the nature of the dynamo that generates the Sun's magnetic fields
-\citep{nordlund&all2009, charbonneau2014}.
+\cite{nordlund&all2009, charbonneau2014}.
 
 To understand the dynamo that drives the Sun's magnetism, we must understand the convection
 which powers that dynamo.  Numerical studies of convection in stratified domain have a
-rich history in the past decade.  The early work of \citealt{graham1975} and \citealt{hurlburt&all1984} and others in simple
+rich history in the past decade.  The early work of \cite{graham1975} and \cite{hurlburt&all1984} and others in simple
 domains provided rich insight into the nature of stratified convection and provided a basis
 in a field which now regularly creates both complex, 3D global models of convection
-(e.g., \citealt{brown&all2010}, \citealt{guerrero&all2016}, and many others)
+(e.g., \cite{brown&all2010}, \cite{guerrero&all2016}, and many others)
 and smaller scale local area models with more complex physics 
-(e.g., \citealt{stein&nordlund2012}, \citealt{rempel2014}).
+(e.g., \cite{stein&nordlund2012}, \cite{rempel2014}).
 From these efforts we have learned a great deal about the nature of convection, and have
 even created beautiful simulations which even \emph{look} like the convection we see on the
 surface of the Sun.
 
 Unfortunately, the great advances made in computational prowess within the solar physics
 community seem to have surpassed our fundamental knowledge in the field. Recent observations
-by \citealt{hanasoge&all2012} (Fig. \ref{fig:fig1}a) show that deep velocities in the solar convection zone
+by Hanasoge et al. (2012) \cite{hanasoge&all2012} (Fig. \ref{fig:fig1}a) show that 
+velocities in the solar convection zone
 are much lower than we would anticipate from our knowledge of simulations.  While the
-more recent observations of \citealt{greer&all2015} (Fig. \ref{fig:fig1}b) 
+more recent observations of Greer et al. (2015) \cite{greer&all2015} (Fig. \ref{fig:fig1}b) 
 argue that the problem is perhaps not so bad
-as it appeared a few years before, observations do not line up with simulations.  The standard
-picture of convection from simulations is that deeper motions are driven more intensely, and
-thus, through mass conservation, should imprint as the strongest motions at the solar surface.
-This is what is seen in simulations, and which was verified by the work of \citealt{lord&all2014}.  However,
-this is precisely not what we see at the solar surface.  The horizontal velocity power spectrum
-at the solar surface shows excess of power in granular and supergranular scales, but the
+as it appeared a few years before.  However, Greer's observations still show a decrease in power at
+large length scales, which does not line up with simulations.  Lord et al. (2014) \cite{lord&all2014} showed
+that unstable, convecting layers drive motions on a length scale which is proportional to
+the local density scale height, which increases with depth.  According to our standard picture of convection
+in which the entire convective zone is unstable, the motions driven at high density deep in the convective
+zone should be large scale, and should imprint strongly at the solar surface.
+However, even doppler measurements of the velocity fields at the solar surface do not show this trend
+\cite{hathaway&all2015}
+(Fig. \ref{fig:fig1}c).  The motions of surface granules and the slightly deeper supergranules are
+clearly present, but the
 ``giant cells'' which are theorized to be driven at the base of the 14-density-scale-height-deep
-convection zone are not observed \citep{hathaway&all2015}.
+convection zone are not observed.
 
 This paints a troubling picture.  Years of simulation results -- and the Mixing Length
-Theory of convection that they inform -- seem to be wrong.  One fundamental problem is that
-we, as a community, are so focused on ensuring that the physics in our simulations are 
-as ``correct'' as we can make them that we ignore the fact that we do not understand the
-effects of each piece of physics on the nature of convection.  When running large, 3D,
-complex simulations, computational cost often limits the number of simulations which can be
+Theory (MLT) of convection that they inform -- seem to be wrong.  Recent work by
+Brandenburg (2016) \cite{brandenburg2016} has sought to incorporate nonlocal effects in
+convection into MLT, but recent simulations \cite{kapyla&all2017} have shown that regions which
+carry a great amount of flux convectively do not necessary locally drive the convection.
+It is the tendency of simulators in the field to ensuring that the physics in our simulations are 
+correct, but this often comes at the price of having testable hypotheses which can be meaningfully
+explored. When running complex, 3D simulations, 
+computational cost often limits the number of simulations which can be
 run, and parameter space studies are often out of the question.  
 
 Drawing on the knowledge and expertise of those in the physics community who study incompressible,
 unstratified \RB convection, we have recently examined hydrodynamic, compressible convection
-in simple stratified domains \citealt{anders&brown2017}.  We discovered that these somewhat complicated systems
+in simple stratified domains \cite{anders&brown2017}.  We discovered that these somewhat complicated systems
 \emph{transport heat in the same way as incompressible systems}, and that the Mach number of
 convection can be easily specified \emph{a priori}.  By setting up a simple experiment, we
 were able to learn something concrete about the fundamental nature of convection.  
@@ -116,48 +127,51 @@ motions and in order to gain a frame of reference for how to understand these ef
 simulations with more complicated, ``more realistic'' physics.
 
 
-\begin{figure}[t!]
+\begin{figure}[t]
 \centering
-%\includegraphics[width=14cm]{figs/Pizzolato_and_D5.eps}
-\caption{(a) The big old problem that hanasoge showed, (b) horizontal power spectrum of the
-solar surface, (c) something? Superadiabaticity profile?
+\includegraphics[width=\textwidth]{figs/fig1.png}
+\caption{(a) Power spectra of solar convective velocities are shown for both observations and simulations,
+and both near the surface and deeper \cite{hanasoge&all2012}.  Observations are obtained
+using time-distance helioseismology, and show velocities roughly two orders of magnitude lower
+than those predicted by simulations, and a decrease in power approaching larger length
+scales rather than the opposite. (b) Further observations of solar velocity power  using
+ring-diagram helioseismology.  Here, velocity magnitudes are roughly in line with those
+predicted by simulations, but show decreasing power as larger scales are approached, unlike
+what is expected from simulations \cite{greer&all2015}.  A simple spectrum of horizontal
+velocities at the solar surface, obtained using line-of-sight Doppler velocities \cite{hathaway&all2015}.
+The length scales of surface granules and deeper supergranules appear as distinct features, but
+the hypothesized giant cells are not observed at low wavenumber.
         \label{fig:fig1}}
 \end{figure}
 
-\section{Numerical Tools}
-I will use Dedalus, because it's awesome and it allows us to study many flexible atmospheres
-under many equation sets easily.
+\section{Proposed Project}
+I propose a series of small projects which will probe and quantify the effects of key
+elements of solar convection on the dynamics of the evolved flows.  Each of these pieces
+of physics is often included in the more complex global simulations or local area models.
 
-I'll primarily use 2D simulations to get intuition about the answers I'm trying to solve,
-then verify them in 3D, as I did in my paper.  The sims shown there took about 3M CPU hours
-to complete, and I have access to an allocation of ~20M CPU hours / year on Pleiades, which
-means that I can complete a few projects of that scope within a year's time.
+The first two projects involve understanding mechanisms of driving convection that are not
+frequently used in simple simulations.  The third project involves a careful study of a
+more complicated piece of physics which is often included, but whose effects have not
+been studied in careful detail.
 
-Furthermore, recent work (Anders, Brown, \& Oishi 2018, submitted to PRFluids) has been
-done to use boundary value problems along with initial value problems to fast-forward
-the slow thermal evolution of these convective simulations.  This work was done in 
-Boussinesq convection but can be easily extended to stratified convection, and will greatly
-extend the number of simulations we will be capable of performing given our modest allocation.
-
-
-\section{Project 1: Internally heated convection}
+\subsection{Mini Project 1: Internally heated convection}
 Our first experiment involves the study of atmospheres where a constant internal heating
 term is included in the energy equation.  This is the simplest form of internal heating,
 and is similar to that which has been studied in \RB convection, just with compressibility
-and stratification included (e.g., \citealt{goluskin&spiegel2012}).  
+and stratification included (e.g., \cite{goluskin&spiegel2012}).  
 We have found that these systems can be constructed so as to
 naturally include stable layers underlying unstable, convection regions.  These systems
 are important to study, because the changing opacities in the interior of the solar convective
 zone effectively act like an internal heating term, depositing energy and driving convection.
 
 We find that these systems essentially have the same input control parameters as simple polytropic
-convection \citep{anders&brown2017}, which include the Rayleigh number (Ra, the strength of
+convection \cite{anders&brown2017}, which include the Rayleigh number (Ra, the strength of
 convective driving and amount of turbulence), the Prandtl number (Pr, the ratio of the thermal
 to viscous diffusivity), the characteristic superadiabaticity of the atmosphere (which sets the Mach
 number of the flows), and the depth of the atmosphere.  In the internally heated systems, we
 find that the magnitude of the internal heating directly relates to the superadiabaticity of the
 atmosphere, and thus Ma, but we must split up the depth into two parameters: the depth of the
-\emph{unstable} region, and the depth of the new \emph{stable} region.  In \citealt{anders&brown2017},
+\emph{unstable} region, and the depth of the new \emph{stable} region.  In \cite{anders&brown2017},
 we explored the effects of the magnitude of the superadiabaticity on the resulting convection,
 and found that -- except where the Mach number is very high -- it has almost no effect on the
 other properties of the convective flows.  
@@ -168,14 +182,14 @@ of the convection zone (to 1, 3, and then 5 density scale heights), and for each
 we will run simulations for shallow and deep radiative zones.  We will examine the evolved
 stratification of these atmospheres in order to determine where convection is driven and where
 it is not.  Preliminary results show that the so-called ``Deardorff zones'' present in the
-simulations of \citealt{kapyla&all2017} are also present in these simple simulations of
+simulations of \cite{kapyla&all2017} are also present in these simple simulations of
 internally heated convection and do not require complex forms of the conductivity to be achieved.
 We expect that the extent of these subadiabatic zones in which convection carries the flux can
 be determined \emph{a priori} in these simple simulations, but further work must be done.
 
 We're looking for the motions at the surface and also the stratification.
 
-\section{Project 2: Nonlinear EOS convection}
+\subsection{Mini Project 2: Hydrogen recombination}
 Most studies of convection are driven either by the choice of fixed boundary conditions
 (hot at bottom, cold at top) or through the volumetric depoisition of energy throughout
 the domain (internal heating).  Here we propose a project in which we utilize a nonlinear
@@ -197,27 +211,42 @@ than the natural one.  We are interested in seeing how these ``too large'' conve
 interact with their surroundings, and in seeing how the atmosphere naturally evolves in the presence
 of these flows.
 
-Things we can study: stratification of evolved solution.  Stable layers?  filling factors.
-Power spectrum.
+We are particularly interested in determining the effects of \emph{where} in the atmosphere the
+transition from ionized to neutral Hydrogen occurs, and also \emph{how much energy} is involved in
+the ionization process.  These are two simple controls which can be examined in full detail through
+a suite of simulations.  We hypothesize that, for sufficiently energetic ionization processes (such as
+that of neutral hydrogen), a natural boundary layer will form between an overlying stable layer and
+underlying convecting region in the atmosphere.  We are further interested in determining how the
+ionization energy determines the length scale of the boundary layer.
 
-\begin{figure}[t!]
-\centering
-%\includegraphics[width=14cm]{figs/2014_oct_sunspots.jpg}
-\caption{(a) word (b) word (c) word
-	\label{fig:fig2}}
-\end{figure}
+Using these two control knobs, we are very interested in determining the startification of the evolved
+solution.  This will tell us how large of a region is driving convection (is it a small layer 
+near the reionization, or does it extend to a great depth below that?  We are also very interested
+in the filling factor of convection compared to simple boundary-driven convection.
 
-\section{Project 3: Realistic Opacities}
-While it is convenient to use a constant conductivity (and thus opacity) in the energy
-equation, as this makes the interpretation of results very simple, this greatly 
-over-simplifies the form of radiative conductivity in natural systems like the Sun.
-In this project, we will carefully implement a kramer's opacity of the form
-$\kappa \propto T^3 / \rho$.  We will run experiments at low and high Mach number,
-some in which $\kappa$ is constant with time and some in which $\kappa$ is allowed to
-evolved with time.  We anticipate that at low Mach number, the deviations from the initial state
-will be small, and the fully nonlinear effects of this term will not be important.  At high
-Mach number, however, like the solar surface, we expect this term to vary significantly
-from the high temperature, low density upflows to the low temperature, high density downflows.
+%\begin{figure}[t!]
+%\centering
+%%\includegraphics[width=14cm]{figs/2014_oct_sunspots.jpg}
+%\caption{(a) word (b) word (c) word
+%	\label{fig:fig2}}
+%\end{figure}
+
+\section{Mini Project 3: Kramer's opacity}
+While it is convenient to use a simple form of the radiative flux of the form of
+Fourier's law of conduction (flux $\propto -\kappa \grad T$), as such a formulation
+makes it very simple to understand what regions in the atmosphere are stable and which
+are unstable, and exactly \emph{how} unstable they are, things are not so simple in nature.
+While the general form is correct, $\kappa$ is, in general, not a constant value through the
+depth of the atmosphere, but rather takes the form of a Kramer's opacity, such as 
+$\kappa \propto T^3 / \rho$. Building upon our previous work, we will determine the proper
+adiabatic gradient for a system with this form of radiative flux, understand how to quantify
+heat transport and determine how to set the Mach number of the experiment.  Then, we will run experiments 
+at low and high Mach number.  We will compare a $\kappa$ which is allowed to change with time
+and a $\kappa$ that changes with height, but not time.  We hypothesize that, for low Mach number
+flows, the time variance of $\kappa$, which makes it a fully nonlinear term, is unimportant, as
+low Ma flows are by definition very small compared to the background.  Once we understand which
+regimes it is appropriate to use a fluctuating verses non-fluctuating $\kappa$, we will
+as further questions.
 
 We are curious to see if this more realistic form of the conductivity significantly changes
 the transport properties of the overall convection: does it affect the heat transport
@@ -227,7 +256,39 @@ driven regions of naturally-occuring, internally heated convection.  Our studies
 1 will help inform how to interpret the divergence of this flux term as an internal heating
 source.
 
-\section{Timeline of proposed work}
+\section{Numerical Tools and Feasibility}
+I will use the open-source Dedalus\footnote{\url{http://dedalus-project.org/}} pseudospectral framework 
+\cite{burns&all2016} to carry out my simulations.  
+Dedalus is a flexible solver of general partial differential equations,
+making it extremely easy to study diverse sets of equations under many different atmospheric
+constraints.  I have already published one paper using this tool \cite{anders&brown2017},
+have submitted another paper, and am now adept at using it to create suites of simulations
+in short timeframes.
+
+I will primarily study 2D convective solutions in plane-parallel atmospheres in order to gain
+intuition about the mean behavior of vertical profiles within the atmosphere.  Once I have a grasp
+on how my measurements vary in 2D across parameter space, I will run select 3D simulations to
+verify whether or not that behavior holds in 3D, as I did in my previous paper \cite{anders&brown2017}.
+In cases where 2D and 3D diverge, I will quantify how and why they do so, but most questions I am
+asking are quite basic, and most of the systems I propose to study here have not been studied
+in the compressible context, at least not recently.  By primarily studying in 2D, and by carefully
+selecting my 3D runs once I know which parameters I must examine more carefully, I can complete
+a full suite of simulations, such as those in my previous paper \cite{anders&brown2017}, using
+roughly 3 million CPU-hours.  Through my advisor, I have access to an allocation on NASA Pleiades
+of roughly 20 million CPU-hours/year, so one- or two- of the following projects of the scope I am
+proposing can be completed each year.
+
+Furthermore, my recent work (Anders, Brown, \& Oishi 2018, submitted to PRFluids) has
+shown that properly constructed boundary value problems, coupled with initial value problems,
+can fast-forward the slow thermal evolution of these convective simulations.  This work was done in 
+Boussinesq, \RB convection but can be easily extended to stratified convection, and will greatly
+extend both the number of simulations we are able to complete and the level of turbulent driving
+(while attaining converged atmospheres) that we are able to solve.
+
+
+
+\subsection{Timeline of proposed work}
+I need to expand this.
 \paragraph{Year 1:}
 \begin{itemize}
 \item (Fall '18) Finalize Internally Heated convection work, submit a paper to ApJL.
@@ -242,9 +303,8 @@ Begin opacity project.
 finalize thesis by end of Spring '20.
 \end{itemize}
 
-\newpage
-
 \section{Relevance to NASA} 
+I need to make this 2017 strategic plan.
 The proposed work fits with NASA's 2014 Strategic Plan objective
 1.4:
 ``Understand the Sun and its interactions with Earth and the solar
@@ -259,14 +319,9 @@ directly comparable to data retrieved by the currently operational Solar
 Dynamics Observatory and the future NASA-ESA Solar Orbiter mission.
 
 \section{Summary}
+Here I summarize all the stuff I said above.
 
 
 
-\bibliographystyle{apj}
-\begingroup
-\renewcommand{\section}[2]{}%
-\begin{footnotesize}
 \bibliography{biblio}
-\end{footnotesize}
-\endgroup
 \end{document}
