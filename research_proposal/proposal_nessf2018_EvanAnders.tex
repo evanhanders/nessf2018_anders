@@ -1,34 +1,43 @@
-\documentclass[aps, pre, onecolumn, nofootinbib, notitlepage, groupedaddress, amsfonts, amssymb, amsmath, longbibliography]{revtex4-1}
-\usepackage{tabularx}
+\documentclass[aasms,12pt]{article}
+\usepackage{natbib}
+\setlength{\bibsep}{0pt plus 0.3ex}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{sectsty}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{xcolor}
+\usepackage{epstopdf}
+\usepackage[skip=2pt,font=small]{caption}
+\captionsetup{width=\textwidth}
+\usepackage{amssymb, amsmath, amsfonts, xcolor}
 \hypersetup{
     colorlinks,
     linkcolor={red!50!black},
-    citecolor={blue!50!black},
+    citecolor={blue!80!black},
     urlcolor={blue!80!black}
 }
-\usepackage{bm}
-\usepackage{natbib}
-\usepackage{longtable}
-\LTcapwidth=0.87\textwidth
 
 
+%\usepackage{titlesec}
+%
+%\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{5pt plus 2pt minus 2pt}
+%\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+%\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+
+\sectionfont{\normalsize}
+%\usepackage{fullpage}
+
+
+%\citestyle{aa}
 \newcommand{\sol}{\ensuremath{\odot}}
 \newcommand{\RB}{Rayleigh-B\'{e}nard }
 \newcommand{\grad}{\ensuremath{\nabla}}
-
-\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist
-
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{} % sets both header and footer to nothing
 \renewcommand{\headrulewidth}{0pt}
-%\cfoot{\thepage}
-%\rfoot{\footnotesize{Evan H. Anders, NASA NESSF 2018}}
+
 
 
 
@@ -42,20 +51,6 @@
    \normalsize\textit{Advisor: Benjamin P. Brown}\\
    \normalsize\textit{Laboratory for Atmospheric and Space Physics (LASP) \& University of Colorado at Boulder}\\
 \end{center}
-
-
-\begin{center}
-\begin{changemargin}{0.5in}{0.5in}
-Blah blah blah. This project supports objective 1.4 of NASA's 2014 Strategic Plan
-	and will assist in developing ``the
-	knowledge and capability to detect and predict extreme conditions in
-	space'' in accordance with NASA's overarching Heliophysics science goals.
-\end{changemargin}
-\end{center}
-
-\vspace{-0.25in}
-
-
 
 \section{Background \& Motivation}
 The Sun exhibits active magnetism which cycles in magnitude every 11 years.
@@ -149,6 +144,31 @@ I propose a series of small projects which will probe and quantify the effects o
 elements of solar convection on the dynamics of the evolved flows.  Each of these pieces
 of physics is often included in the more complex global simulations or local area models.
 
+In the interior of the Sun, there is a positive radial gradient of the opacity.  This means
+that as one looks further outwards from the center of the Sun, radiation is less efficient at
+carrying flux and so convection becomes increasingly essential to carry the solar luminosity.
+This convection is strongly driven near the solar photosphere, helped in large part thanks to
+the ionization and recombination of hydrogen atoms. We will study both of these phenomena in
+small pieces.  
+
+The divergence of the radiative flux in the solar interior acts like an
+internal heating term.  Flux is deposited as it ceases to be carried by radiation, and this
+deposition of flux either drives convection or requires convection driven nonlocally to carry
+it.  We will thus study simple atmospheres which are driven by internal heating rather than
+driven by boundary conditions.
+
+The driving of convection at the solar surface by hydrogen ionization and recombination can
+be added to a simple study of convection through the use of a phase change at a specific temperature.
+We will study atmospheres where one of these phase changes occurs within the domain, and
+examine its effects on the dynamics of convection.
+
+Then, we will examine the effects of using a realistic opacity profile, rather than a constant
+opacity throughout the depth of the box.  With our knowledge of internally heated convection,
+we will understand how the divergence of the radiative flux drives the convection.  With our
+knowledge of the hydrogen ionization and recombination, we will be able to employ a mechanism in the
+upper atmosphere which efficiently releases the large amount of energy carried by the convection.
+By combining these experiments with a more realistic profile of opacity, we will then
+
 The first two projects involve understanding mechanisms of driving convection that are not
 frequently used in simple simulations.  The third project involves a careful study of a
 more complicated piece of physics which is often included, but whose effects have not
@@ -189,6 +209,19 @@ be determined \emph{a priori} in these simple simulations, but further work must
 
 We're looking for the motions at the surface and also the stratification.
 
+
+Our research group has extensive experience studying convection penetrating into stable layers.
+In soon-to-be-submitted work (Brown et al. 2018, in prep) a systematic approach to studying
+penetrative convection is laid out, and it is found that the depth of penetration is well
+predicted by a buoyancy equilibration model.  We anticipate that the same will be true in 
+Internaly heated convection.  Another piece of forthcoming work (Oishi et al. 2018, in prep)
+shows that penetrating convection does not extend the convection zone downwards into the stable
+layer, as typical knowledge assumes.  It rather dredges up excess entropy into the convecting region
+and makes the bottom of the convecting region marginally stable.  A similar effect was found
+recently in more complex systems \cite{kapyla&all2017}, and is also observed in our preliminary
+runs of internally heated convection.  This work will study this phenomenon carefully and apply
+this knowledge to the Solar Convective Conundrum.
+
 \subsection{Mini Project 2: Hydrogen recombination}
 Most studies of convection are driven either by the choice of fixed boundary conditions
 (hot at bottom, cold at top) or through the volumetric depoisition of energy throughout
@@ -224,6 +257,7 @@ solution.  This will tell us how large of a region is driving convection (is it 
 near the reionization, or does it extend to a great depth below that?  We are also very interested
 in the filling factor of convection compared to simple boundary-driven convection.
 
+
 %\begin{figure}[t!]
 %\centering
 %%\includegraphics[width=14cm]{figs/2014_oct_sunspots.jpg}
@@ -231,9 +265,9 @@ in the filling factor of convection compared to simple boundary-driven convectio
 %	\label{fig:fig2}}
 %\end{figure}
 
-\section{Mini Project 3: Kramer's opacity}
+\subsection{Mini Project 3: Kramer's opacity}
 While it is convenient to use a simple form of the radiative flux of the form of
-Fourier's law of conduction (flux $\propto -\kappa \grad T$), as such a formulation
+Fourier's law of conduction \cite{lecoanet&all2014} (flux $\propto -\kappa \grad T$), as such a formulation
 makes it very simple to understand what regions in the atmosphere are stable and which
 are unstable, and exactly \emph{how} unstable they are, things are not so simple in nature.
 While the general form is correct, $\kappa$ is, in general, not a constant value through the
@@ -288,40 +322,87 @@ extend both the number of simulations we are able to complete and the level of t
 
 
 \subsection{Timeline of proposed work}
-I need to expand this.
-\paragraph{Year 1:}
+\textbf{Year 1 (Fall 2018 - Summer 2019):}
 \begin{itemize}
-\item (Fall '18) Finalize Internally Heated convection work, submit a paper to ApJL.
-\item (Spring-Summer '19) Run simulations of nonlinear EOS, write paper, submit to ApJ.
-Begin opacity project.
+\vspace{-0.2cm}
+\item Finalize work on Internally Heated convection, which will be started Spring-Summer 2018.
+Submit a short paper summarizing the methods and results of this work to the Astrophysical Journal
+by mid-Fall 2018.  Release code upon submission such that the community can use it.
+\vspace{-0.2cm}
+\item Delve into literature on past work regarding ionizing convection and moist convection.
+Understand the pieces of physics necessary to correctly implement a nonlinear equation of state.
+Begin to develop Dedalus simulations of ionizing convection by end of 2018.
+\vspace{-0.2cm}
+\item Fully Develop ionizing convection code.  Determine the range of parameter space to be studied
+and execute the simulations within this range.  Analyze data, and have a short paper written and
+submitted on them to the Astrophysical Journal by the end of summer 2019.
 \end{itemize}
-%\vspace{-0.5cm}
 
-\paragraph{Year 2:}
+\textbf{Year 2 (Fall 2019 - Spring 2020):}
 \begin{itemize}
-\item (Fall '19 - Spring '20) Finalize opacity project, submit ApJ.  Write and
-finalize thesis by end of Spring '20.
+\vspace{-0.2cm}
+\item Begin literature review on Kramer's opacity late summer 2019-early fall 2020.  Understand
+past work done, and implementing both time-dependent (fully nonlinear) and time-independent
+versions of the Kramer's opacity in simple atmospheres.  Run a suite of simulations at high-
+and low- Mach number by end of year 2019.
+\vspace{-0.2cm}
+\item Analyze data from Kramer's opacity results and prepare a small paper to submit to the
+Astrophysical Journal Letters by end of Winter 2020.
+\vspace{-0.2cm}
+\item Combine work from five published papers into a thesis, to be defended at the end of 
+Spring 2020.
 \end{itemize}
 
 \section{Relevance to NASA} 
-I need to make this 2017 strategic plan.
 The proposed work fits with NASA's 2014 Strategic Plan objective
 1.4:
 ``Understand the Sun and its interactions with Earth and the solar
-system, including space weather.''
-This work also fits in with one of the three overarching science goals
-of the Heliophysics section of NASA's 2014 Science Plan: 
+system, including space weather.''  Specifically, I aim to help answer
+the fundamental question, ``What causes the Sun to vary?'' 
+This work also aims to answer one of the three overarching science goals
+in chapter 4.1 of NASA's 2014 Science Plan: 
 ``Develop the
 knowledge and capability to detect and predict extreme conditions in space to
 protect life and society and to safeguard human and robotic explorers beyond
-earth.''  Furthermore, simulated observables created by this work will be
-directly comparable to data retrieved by the currently operational Solar
-Dynamics Observatory and the future NASA-ESA Solar Orbiter mission.
+earth.'' In order to understand how to predict space weather appropriately, we
+need to understand the processes that cause this weather.  It is clear from
+recent work that our understanding of the fundamentals of convection is not as perfect
+as we once thought, and now is an exciting time to clarify our theory and determine which
+parts of it fail and which parts hold true under more examination.  Only once we understand
+the fundamental nature of stratified, compresible convection can we begin to understand
+how it drives the dynamo in the Sun in the presence of many complications such as
+differential rotation, shear layers near the base and top of the convection zone, and
+magnetism.
+
+The work has been motivated by data from the Helioseismic and Magnetic Imager (HMI) onboard
+the NASA Solar Dynamics Observtory (SDO) spacecraft 
+\cite{hanasoge&all2012, greer&all2015, hathaway&all2015}, and will continue to be informed by
+new helioiseismic measurements made from SDO data, and from the new measurements which will
+be made possible by the upcoming joint NASA-ESA Solar Orbiter's Polarimetric and 
+Helioseismic Imager (PHI).
+
 
 \section{Summary}
-Here I summarize all the stuff I said above.
+Recent observations call into question our fundamental understanding of stratified
+convection in systems such as the solar convection zone \cite{hanasoge&all2012, greer&all2015}.
+Here we present three focused, scoped studies of stratified convection which probe the
+specific effects of individual elements of convection in the Sun.  Convection must carry
+flux in the Sun's convective envelope, because the radiative flux becomes too small and deposits
+energy there, acting essentially like internal heating. Convection is driven at the surface of
+the Sun due to the ionization and recombination of hydrogen near the solar photosphere.  The
+magnitude of the flux that must be carried by convection varies greatly throughout the depth
+of the convection zone due to the increase of opacity with height.
+
+We propose to probe the first of these elements by studying simple internal heating systems,
+the second of these elements by studying convection with a nonlinear equation of state / phase
+change, and the third of these elements by studying convection with a realistic opacity profile
+in the context of our knowledge from the first two experiments.  Due to the developed nature of
+our computational tool, Dedalus, the simulations for these projects can be implemented and
+carried out on short timescales, and the body of work suggested here should be finished within
+two years, by the end of the spring of 2019.
 
 
+\bibliographystyle{apj}
 
 \bibliography{biblio}
 \end{document}
