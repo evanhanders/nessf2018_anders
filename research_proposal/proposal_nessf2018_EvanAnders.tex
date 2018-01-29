@@ -37,7 +37,7 @@
 
 \begin{document}
 \begin{center}
-   \large\textbf{Towards a solution to the solar convective conundrum:}\\
+%   \large\textbf{Towards a solution to the solar convective conundrum:}\\
    \large\textbf{Does the Sun drive giant cells?}\\
    \vspace{0.2cm}
    \large{Evan H. Anders}\\
@@ -112,7 +112,7 @@ in the first place}.
 In order to determine the fate of giant cells, we must return to simple models of convection to
 understand how nonlinear convective dynamics influence the underlying atmospheric stratification.
 As convection is only driven where the atmosphere is unstably stratified, processes which stabilize the lower convective
-zone should prevent the driving of giant cells and affect surface observations.
+zone should prevent the generation of giant cells and affect surface observations.
 Here I present two simple, small experiments which aim to elucidate fundamental aspects of solar
 convection. I propose to determine whether either of these mechanisms is the reason that we do not see giant cells
 at the solar surface. I will use methods similar to those employed in my recently published work
@@ -134,13 +134,14 @@ This results in a divergence of radiative flux which deposits
 energy in the convective layers, and this energy must in turn be carried by convective motions.
 In other words, the convection in the Sun is not driven by a sharp lower boundary but rather
 through naturally occuring internal heating.
-Further, the upper boundary layer of the solar convective zone does not arise because of a hard
-upper boundary, but rather because of radiative losses at the photosphere, paired with the ionization and 
+Further, the upper boundary layer of the solar convective zone does not arise because of a hard, imposed wall, 
+but rather because of radiative losses at the photosphere, paired with the ionization and 
 recombination of hydrogen. These
-two effects -- the internal driving of solar convection and the driving of convection at the solar surface 
+two effects -- the internal driving of solar convection by opacity effects 
+and the driving of convection at the solar surface 
 by hydrogen ioniziation -- have not been fully explored in recent literature.
 
-Recent exciting work by \cite{kapyla&all2017}
+The exciting work of \cite{kapyla&all2017}
 exhibited atmospheres in which deep layers of the convection
 zone are stable, a setup in which giant cells would not be driven.  
 The authors attribute these deep, stable layers to their inclusion of Kramers' opacity
@@ -152,7 +153,7 @@ zones and convective motions are at low Mach number.
 Further, first results from work that I am conducting on stratified, internally
 heated convection (modeled after simpler studes, e.g., \cite{goluskin&spiegel2012}),
 show that these stable convecting layers arise naturally when internal heating is the mechanism which
-drives convection, even in the presence of a constant radiative conductivity throughout the depth of the atmosphere.
+drives convection, even when realistic opacities are not used.
 
 Since the process of internal heating -- not the complex form of a Kramers' opacity --
 appears to be the fundamental cause of the stratification effects seen recently by \cite{kapyla&all2017},
@@ -163,10 +164,10 @@ of the Sun, building on the previous work of e.g., \cite{rast&toomre1993}.
 \vspace{-0.25cm}
 \subsection{Project 1: Effect of Kramers' opacity on solar convection}
 \vspace{-0.15cm}
-Many careful studies of convection employ a constant radiative conductivity.
 The transport of heat within an optically thick atmosphere, in the absence of convective transport,
 is often quantified by Fourier's law of conduction \citep{lecoanet&all2014}, in which the radiative
 flux is proportional to the conductivity and the temperature gradient.  
+Many careful studies of convection employ a constant radiative conductivity.
 While a constant conductivity in time and space allows for the creation of simple measurements of the
 heat transport in the evolved atmosphere, such an assumption about
 the conductivity is coupled with unrealistic assumptions regarding the functional form of the opacity.  
@@ -177,8 +178,7 @@ conductivity is the go-to choice for many in the physics community who study inc
 communities.  Instead, these communities generally employ a radiative conductivity which is a function
 of the temperature, density, and the Kramers' opacity \citep{barekat&brandenburg2014, brandenburg2016, kapyla&all2017}.
 As a result, the conductivity varies greatly throughout the depth of the atmosphere, which 
-more carefully captures the physics of nature but also makes interpretation of the solution 
-more difficult.
+more carefully models natural physics but also makes the solution harder to interpret.
 
 In order to study the importance of Kramers' opacity, a frame of reference must be constructed
 in which to study this varying opacity. For example, what atmospheric parameter determines the Mach number
@@ -186,7 +186,7 @@ of evolved flows?  At what value of the Rayleigh number
 does convection turn on (and thus, at what \emph{supercriticality} are other studies
 being run)?  What are the parameters of the initial state that determine key quantities
 of the evolved convection, and what can we learn about the evolved dynamics from them?
-Only by answering these simple questions can a careful study of Kramers' Opacity be carried out.
+Only by answering these simple questions can a careful study of Kramers' opacity be carried out.
 Through answering these questions about basic polytropic systems, I was able to determine that
 regardless of Mach number, basic stratified compressible convection \emph{transports heat
 in the same manner as unstratified, incompressible \RB convection} \citep{anders&brown2017}.
@@ -195,8 +195,8 @@ After determining how to carry out controlled experiments studying the role of K
 I will study the importance of the nonlinear nature of this opacity on convection.
 In downflows (where density is high and temperature is low), the radiative conductivity
 should be low compared to upflows.
-However, at low Mach number, where variations in $T$ and $\rho$ are small
-in upflows and downflows, we anticipate that this effect will be unimportant.  In the Sun,
+However, at low Mach number, where fluctuations in temperature and density are small,
+we anticipate that this effect will be unimportant.  In the Sun,
 the Mach number of convection ranges from nearly Mach 1 at the surface to O($10^{-5}$) in the
 deep interior.  Thus, it is important to understand how this
 complex form of opacity interacts with convection at both high and low Mach number in order to understand
@@ -210,7 +210,7 @@ all Mach numbers, then the ``entropy rain'' addition to convective theory expand
 \cite{brandenburg2016} and explored by \cite{kapyla&all2017} could be an essential element
 of solar convection.  Nonlocal transport mechanisms of this nature 
 could drastically change the stratification of deep convection. If marginal stability in the deep 
-convection zone is achieved because of one of nonlocal transport effects associated with this,
+convection zone is achieved because of nonlocal transport effects associated with this opacity,
 it would imply that the nature of Kramers' opacity helps lead to the lack of observed giant cells.
 
 \vspace{-0.25cm}
@@ -228,17 +228,17 @@ the opacity).
 The convective boundary layer near the solar photosphere is much larger than the local thermal
 diffusion length scale, in part because of the depth at which hydrogen ionizes. This large boundary
 layer drives large convective elements (granules), and the length scale of those elements likely
-plays an important role on the convective dynamics. 
-If the size of these convective elements allows them to persist deep in the atmosphere, they could significantly alter the
+significantly influences the convective dynamics. 
+If the size of these convective elements allows them to persist deep in the atmosphere, they could drastically alter the
 mean stratification deep in the convective zone.  We aim to study the difference in the 
-nature of convection -- especially in the surface power spectrum -- when hydrogen recombination
+nature of convection -- especially in the surface power spectrum (as in Fig. \ref{fig:fig1}) -- when hydrogen recombination
 is the driver of convection near the upper boundary, rather than the other more common methods.
 
 I will implement the basic nature of hydrogen ionization and recombination through the use of
-a nonlinear equation of state built around a single-atmoic level model of particles,
+a nonlinear equation of state built around a single-atomic level model of particles,
 similar to that used in \cite{rast&toomre1993}.
-This work in year 2 will further be guided by prior studies on moist convection (e.g., \citet{leconte&all2017}),
-in which phase changes resulting in cloud formation are studied. We will study the effects of
+This work in year 2 will further be guided by prior studies on moist convection \citep{leconte&all2017},
+in which phase changes resulting in cloud formation are studied. We will examine the effects of
 hydrogen ionization on atmospheric stratification in two ways.  First, we will determine the effects of the
 \emph{location} of the ionizing layer in order to determine if we can naturally make transitions from
 stable regions (above) to convecting regions (below) occur, as occurs at the solar photosphere.  
@@ -246,8 +246,8 @@ We will also determine
 the effects of the \emph{extent} of the ionizing layer, to determine if this changes the average length
 scale of convective elements, and to determine if there is any correlation between the length scale of convective
 elements driven at the surface, the atmospheric stratification, and the average power spectrum of motions near the
-surface. If large elements descent to the bottom of the convective zone and stay there, they could very
-well restratify the atmosphere to prevent the driving of giant cells.
+surface. If large elements descend to the bottom of the convective zone and stay there, they could very
+well restratify the atmosphere and prevent the generation of giant cells.
 
 
 \section{Timeline of proposed work}
@@ -262,7 +262,7 @@ on the nature of convection with Kramers' opacity at both low and high Mach numb
 end of spring 2019.
 \vspace{-0.2cm}
 \item \emph{Project 2:} Conduct literature review on past work done on ionizing convection and moist convection.
-Construct appropriate atmospheres for studying ionizing convection, and learn what aspects of
+Construct appropriate atmospheres for studying ionizing convection, and learn what properties of
 these atmospheres control different aspects of the evolved solutions.
 \end{itemize}
 
@@ -283,10 +283,10 @@ Dedalus is a flexible solver of partial differential equations,
 making it extremely easy to study diverse sets of equations under many different atmospheric
 constraints.  I have already published one paper using this tool \citep{anders&brown2017}
 and am now adept at using it to create suites of simulations
-in short timeframes. Our run scripts for using Dedalus to study stratified atmospheres
+in short time frames. Our run scripts for using Dedalus to study stratified atmospheres
 are themselves publically available\footnote{\url{https://bitbucket.org/exoweather/polytrope}}.
 By using an open-source code base and opening our run scripts to the community, we hope to
-not only make our results reproduceable, but also decrease the amount of future user efforts in 
+make our results reproduceable and decrease barriers for future users in 
 \emph{extending} our studies towards a more complete understanding of convection.
 
 
@@ -310,7 +310,7 @@ The proposed work fits with NASA's 2014 Strategic Plan objective
 ``Understand the Sun and its interactions with Earth and the solar
 system, including space weather.''  Specifically, I aim to help answer
 the fundamental question, ``What causes the Sun to vary?'' by understanding
-the nature of stratified convection present at the solar photosphere.
+the nature of stratified convection present at the solar photosphere and in the deep interior.
 This work also aims to answer one of the three overarching science goals
 in chapter 4.1 of NASA's 2014 Science Plan: 
 ``Develop the
@@ -321,7 +321,7 @@ need to understand the processes that cause this weather.  Recent work
 shows that our fundamental understanding of solar convection is flawed, and our theory needs
 clarification.
 
-The work has been motivated by data from the Helioseismic and Magnetic Imager (HMI) onboard
+This work has been motivated by data from the Helioseismic and Magnetic Imager (HMI) onboard
 the NASA Solar Dynamics Observtory (SDO) spacecraft 
 \citep{hanasoge&all2012, greer&all2015, hathaway&all2015}, and will continue to be informed by
 new helioiseismic measurements made from SDO data. This work will additionally be informed
@@ -340,7 +340,7 @@ convective simulations with these elements to simpler studies without them.
 Due to the developed nature of
 our computational tool, Dedalus, and extensive experience using that tool \citep{anders&brown2017},
 the simulations for these projects can be implemented and
-carried out on short timescales, and the body of work proposed here will be finished within
+carried out on short time scales, and the body of work proposed here will be finished within
 two years.
 
 
