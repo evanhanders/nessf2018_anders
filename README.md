@@ -6,11 +6,12 @@ This is the repository for Evan's 2018 NESSF proposal.
 
 New applications must include the elements listed below, clearly identified, starting on a
 new page, and appearing in the following order in a single PDF file:
+
 1. A personal statement which outlines a candidate’s goals, experiences, attributes, and academic achievements that, when considered in combination with the other application components, shows academic excellence, as broadly construed (refer to "Proposal Evaluation and Selection"). This section may total no more than one single-spaced uploaded page.
 2. A description of the proposed research project, including figures and tables, as appropriate. This section, excluding references, may total no more than six single-spaced uploaded pages. References must follow the project description and are not included in the page limit. The project description should include the following elements:
-* A well-defined problem with a justification of its scientific significance and a detailed approach for its resolution.
-* A statement describing the relevance of the proposed work to the appropriate SMD Division.
-* A timeline for the proposed project listing anticipated accomplishments and major milestones, including expected publications. Although this is initially a one-year award (renewable for two additional years), projects should be scoped for the entire intended length of the award (up to three years).
+	* A well-defined problem with a justification of its scientific significance and a detailed approach for its resolution.
+	* A statement describing the relevance of the proposed work to the appropriate SMD Division.
+	* A timeline for the proposed project listing anticipated accomplishments and major milestones, including expected publications. Although this is initially a one-year award (renewable for two additional years), projects should be scoped for the entire intended length of the award (up to three years).
 3. A schedule stating the start and completion dates, as well as anticipated milestones, of the applicant’s degree program;
 4. Curriculum Vitae of the faculty advisor and the student, limited to two pages each;
 5. A signed letter of recommendation from the student’s academic advisor on institutional letterhead, which must include the name of the student, the name of the proposing institution, and the NESSF proposal title, and should address some of the review criteria from Section 7;
@@ -24,9 +25,9 @@ The Directors of the Science Divisions of SMD at NASA Headquarters or their desi
 will make respective selection of applications for award on a competitive basis. Criteria
 for evaluation include:
 
-(a) the scientific merit of the proposed research;
-(b) the relevance of the proposed research to NASA’s objectives in Earth or space science as outlined above; and
-(c) academic excellence based upon an applicant's personal statement, transcripts, the signed letter of recommendation by the student's academic advisor, the degree to which the applicant’s academic background supports the proposed research, and the applicant’s curriculum vitae. Evaluation will be conducted by community-based reviewers via either mail or panel review, or both, or by the relevant NASA SMD Division program managers.
+* the scientific merit of the proposed research;
+* the relevance of the proposed research to NASA’s objectives in Earth or space science as outlined above; and
+* academic excellence based upon an applicant's personal statement, transcripts, the signed letter of recommendation by the student's academic advisor, the degree to which the applicant’s academic background supports the proposed research, and the applicant’s curriculum vitae. Evaluation will be conducted by community-based reviewers via either mail or panel review, or both, or by the relevant NASA SMD Division program managers.
 
 The scientific merit of the proposed research includes:
 
