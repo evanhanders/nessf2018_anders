@@ -1,0 +1,158 @@
+\documentclass[11pt, preprint]{aastex}
+
+%%%%%%begin preamble
+\usepackage[hmargin=1in, vmargin=1in]{geometry} % Margins
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{times}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+\usepackage{import}
+%\usepackage{fontspec}
+%\setmainfont{TimesNewRoman}
+%\definetypeface[Serapion][rm][Xserif][Serapion Pro]
+%\setupbodyfont[Serapion, 12pt]
+
+%%%
+%%%%%% uncomment following 4 lines to adjust title size/shape and
+%%%%%% trailing space
+%% \usepackage{titling}
+%% %\pretitle{\noindent\Large\bfseries}
+%% \date{}
+%% \setlength{\droptitle}{-1in}
+%\posttitle{\\}
+
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray,
+     urlcolor      = blue
+}
+
+\setcounter{tocdepth}{2}
+%% headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Brown}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+\newcommand{\sol}{\ensuremath{\odot}}
+\newcommand{\Dedalus}{\href{http://dedalus-project.org}{Dedalus}}
+\newcommand{\Reyn}{\ensuremath{\mathrm{Re}}}
+\newcommand{\Rayleigh}{\ensuremath{\mathrm{Ra}}}
+\newcommand{\Rossby}{\ensuremath{\mathrm{Ro}}}
+\newcommand{\Rmag}{\ensuremath{\mathrm{Rm}}}
+\newcommand{\Rmagc}{\ensuremath{\mathrm{Rm}_\mathrm{crit}}}
+\newcommand{\Prandtl}{\ensuremath{\mathrm{Pm}}}
+\newcommand{\Peclet}{\ensuremath{\mathrm{Pe}}}
+\newcommand{\Mach}{\ensuremath{\mathrm{Ma}}}
+\newcommand{\Stiffness}{\ensuremath{\mathrm{S}}}
+\newcommand{\Lund}{\ensuremath{\mathrm{S}}}
+\newcommand{\Lundc}{\ensuremath{\mathrm{S}_\mathrm{crit}}}
+\newcommand{\yt}{\texttt{yt}}
+\newcommand{\enzo}{\texttt{Enzo}}
+\newcommand{\nosection}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \markright{#1}}
+\newcommand{\nosubsection}[1]{%
+  \refstepcounter{subsection}%
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}%
+  \markright{#1}}
+
+
+%%%%%%end preamble
+
+\begin{document}
+\thispagestyle{empty}
+\parindent=0cm
+\section*{~}
+\vspace{-1.5cm}
+\begin{center}
+\huge{Benjamin Brown}\\
+\large{Biographical Sketch}\\
+\small{Department of Astrophysical and Planetary Sciences\\
+University of Colorado, Boulder \\\texttt{bpbrown@colorado.edu}}
+\end{center}
+
+\vspace{-1.25cm}
+\section*{Professional Preparation}
+\vspace{-0.25cm}
+\begin{tabular}{lll}
+  Harvey Mudd College & Physics & BS May 2003\\
+  University of Colorado, Boulder & Astrophysics & PhD August 2009\\
+  University of Wisconsin, Madison & Astronomy & Postdoc September 2009 -- August 2013 \\
+  University of California, Santa Barbara & KITP  & Postdoc September 2013 -- July 2014\\
+\end{tabular}
+\vspace{-0.75cm}
+\section*{Appointments}
+\vspace{-0.25cm}
+\begin{tabular}{lll}
+  Assistant Professor & University of Colorado, Boulder & August 2014 -- \\
+  Research Associate & Kavli Institute for Theoretical Physics & September 2013 -- July 2014\\
+  Postdoctoral Fellow & University of Wisconsin, Madison & September 2009 -- August 2013\\
+  NSF AAPF  & University of Wisconsin, Madison & September 2009 -- August 2013\\
+\end{tabular}
+\vspace{-0.75cm}
+\section*{Five Publications Most Relevant to Proposed Work (out of 34 total)}
+\vspace{-0.25cm}
+\begin{itemize}
+\setlength{\itemsep}{-\parsep}
+\setlength{\topsep}{-2\parsep}
+\setlength{\partopsep}{-2\parsep}
+
+\item Bordwell, B., \textbf{Brown}, B.~P., \& Oishi, J.~S.,
+  ``Convective dynamics and disequilibrium chemistry in the atmospheres of giant planets and brown dwarfs'',
+  2018, \emph{The Astrophysical Journal}, in press
+
+
+\item Lecoanet, D., Schwab, J., Quataert, E., Bildsten, L., Timmes,
+  F.~X., Burns, K.~J., Vasil, G.~M., Oishi, J.~S., \& \textbf{Brown}, B.~P.,
+  ``Turbulent chemical diffusion in convectively bounded carbon  flames'',
+  2016, \emph{The Astrophysical Journal}, 832,~71:1--8
+
+\item  Lecoanet, D., \textbf{Brown}, B.~P., Zweibel, E.~G., Burns, K., Oishi, J.~S, \& Vasil, G.~M.,
+``Conduction in low-Mach number flows: part I linear \& weakly nonlinear regimes'',
+2014, \emph{The Astrophysical Journal}, 797,~94:1--16
+
+\item
+  Vasil, G.~M., Lecoanet, D., \textbf{Brown}, B.~P., Wood, T.~S., \& {Zweibel}, E.~G.,
+``Energy conservation and gravity waves in sound-proof treatments of
+  stellar interiors: Part II Lagrangian constrained analysis'', 2013,
+  \textit{The Astrophysical Journal} 773,~169:1--23
+
+\item
+\textbf{Brown}, B.~P.,  Vasil, G.~M., \& Zweibel, E.~G., 
+``Energy conservation and gravity waves in sound-proof treatments of
+  stellar interiors: Part I anelastic approximations'', 2012,
+  \textit{The Astrophysical Journal} 756,~109:1--20
+
+\end{itemize}
+
+\vspace{-1.5cm}
+\section*{Synergistic activities}
+\vspace{-0.25cm}
+Brown is an expert in the stratified fluid dynamics of stars and planetary atmospheres.
+Brown has been involved in modelling stellar convection since 2003,
+when he began using the anelastic spherical harmonic (ASH) code to
+study the coupling of convection, rotation and magnetic dynamo action
+in the Sun and in other solar-type stars.  He has published results on magnetohydrodynamic
+processes in stellar interiors, on convective wave generation and
+transport, and on fundamental properties of stratified fluid dynamics.
+He is a core member of the development team for the open-source
+Dedalus framework.  He has extensive HPC experience and a history of 
+success in obtaining large computing allocations.  
+At University of Colorado, he leads a research
+group of four graduate students, two postdocs and two undergraduate
+students, working on topics in solar, stellar and exoplanetary
+dynamics.  He has mentored two students through Masters level
+(Anders \& Bordwell); both recieved highest honors in their research.
+
+\end{document}
