@@ -30,6 +30,7 @@
 \pagestyle{fancy}
 \fancyhf{} % sets both header and footer to nothing
 \renewcommand{\headrulewidth}{0pt}
+\cfoot{\footnotesize{\thepage}}
 
 
 
@@ -38,7 +39,8 @@
 \begin{document}
 \begin{center}
 %   \large\textbf{Towards a solution to the solar convective conundrum:}\\
-   \large\textbf{Does the Sun drive giant cells?}\\
+   \large\textbf{Fundamental studies into the solar convective conundrum:}\\
+   \large\textbf{Do giant cells exist?}\\
    \vspace{0.2cm}
    \large{Evan H. Anders}\\
    \vspace{0.2cm}
@@ -78,7 +80,7 @@ showed an absence of power in the solar velocity spectrum at large length scales
 hypothesized that large-scale
 ``giant cells'' should be driven by deep convective motions and visible throughout the solar convective
 zone, but we do not see these giant cells.
-Even simpler doppler measurements of the velocity fields at the solar surface, which are not muddied
+Even simpler Doppler measurements of the velocity fields at the solar surface, which are not muddied
 by complex helioseismic inversions, lack
 giant cells (\citealt{hathaway&all2015} \& Fig. \ref{fig:fig1}b).  
 The motions of surface granules and the slightly deeper supergranules are clearly present, but no
@@ -113,10 +115,10 @@ In order to determine the fate of giant cells, we must return to simple models o
 understand how nonlinear convective dynamics influence the underlying atmospheric stratification.
 As convection is only driven where the atmosphere is unstably stratified, processes which stabilize the lower convective
 zone should prevent the generation of giant cells and affect surface observations.
-Here I present two simple, small experiments which aim to elucidate fundamental aspects of solar
+Here I present two small experiments which aim to elucidate fundamental aspects of solar
 convection. I propose to determine whether either of these mechanisms is the reason that we do not see giant cells
 at the solar surface. I will use methods similar to those employed in my recently published work
-\citep{anders&brown2017} to create simple, controlled experiments studying turbulent
+\citep{anders&brown2017} to create comprehensible, controlled experiments studying turbulent
 compressible convection in stratified atmospheres 
 to gain a deep understanding of the underlying convective physics.
 Furthermore, the knowledge gained in forthcoming work (Anders, Brown, \& Oishi 2018, submitted to PRFluids),
@@ -134,9 +136,9 @@ This results in a divergence of radiative flux which deposits
 energy in the convective layers, and this energy must in turn be carried by convective motions.
 In other words, the convection in the Sun is not driven by a sharp lower boundary but rather
 through naturally occuring internal heating.
-Further, the upper boundary layer of the solar convective zone does not arise because of a hard, imposed wall, 
-but rather because of radiative losses at the photosphere, paired with the ionization and 
-recombination of hydrogen. These
+Further, the upper boundary layer of the solar convective zone arises because of 
+radiative losses at the photosphere paired with the ionization and 
+recombination of hydrogen, not because of an imposed wall at the solar photosphere. These
 two effects -- the internal driving of solar convection by opacity effects 
 and the driving of convection at the solar surface 
 by hydrogen ioniziation -- have not been fully explored in recent literature.
@@ -172,9 +174,9 @@ While a constant conductivity in time and space allows for the creation of simpl
 heat transport in the evolved atmosphere, such an assumption about
 the conductivity is coupled with unrealistic assumptions regarding the functional form of the opacity.  
 
-While a constant radiative
+A constant radiative
 conductivity is the go-to choice for many in the physics community who study incompressible
-\RB convection, it is often not the choice for those in the heliophysics or astrophysics
+\RB convection; however, it is often not the choice for those in the heliophysics or astrophysics
 communities.  Instead, these communities generally employ a radiative conductivity which is a function
 of the temperature, density, and the Kramers' opacity \citep{barekat&brandenburg2014, brandenburg2016, kapyla&all2017}.
 As a result, the conductivity varies greatly throughout the depth of the atmosphere, which 
@@ -183,11 +185,11 @@ more carefully models natural physics but also makes the solution harder to inte
 In order to study the importance of Kramers' opacity, a frame of reference must be constructed
 in which to study this varying opacity. For example, what atmospheric parameter determines the Mach number
 of evolved flows?  At what value of the Rayleigh number
-does convection turn on (and thus, at what \emph{supercriticality} are other studies
-being run)?  What are the parameters of the initial state that determine key quantities
+does convection turn on (and thus, at what \emph{supercriticality} are simulations in past studies)?
+What are the parameters of the initial state that determine key quantities
 of the evolved convection, and what can we learn about the evolved dynamics from them?
 Only by answering these simple questions can a careful study of Kramers' opacity be carried out.
-Through answering these questions about basic polytropic systems, I was able to determine that
+Through answering similar questions about basic polytropic systems, I was able to determine that
 regardless of Mach number, basic stratified compressible convection \emph{transports heat
 in the same manner as unstratified, incompressible \RB convection} \citep{anders&brown2017}.
 
@@ -225,28 +227,30 @@ convective elements which form at the surface are determined either by the pre-i
 entropy draining region or the natural size of the thermal boundary layer (which depends on
 the opacity).
 
-The convective boundary layer near the solar photosphere is much larger than the local thermal
-diffusion length scale, in part because of the depth at which hydrogen ionizes. This large boundary
-layer drives large convective elements (granules), and the length scale of those elements likely
-significantly influences the convective dynamics. 
-If the size of these convective elements allows them to persist deep in the atmosphere, they could drastically alter the
-mean stratification deep in the convective zone.  We aim to study the difference in the 
-nature of convection -- especially in the surface power spectrum (as in Fig. \ref{fig:fig1}) -- when hydrogen recombination
-is the driver of convection near the upper boundary, rather than the other more common methods.
+The convective elements driven at the solar photosphere (granules) are large compared to the local
+thermal diffusion length scale.  Their size is likely determined by the vertical extent of the convective
+boundary layer, which in turn is partially set by the depth of hydrogen ionization.  The relatively large
+granular scale may drive convective elements whose size help them persist through the depth of the solar
+convection zone. If cool surface elements reach the base of the convection zone in tact, they could drastically
+alter the mean stratification of the deep convective zone.  
+I aim to study the effect of hydrogen ionization on the stratification of convecting atmospheres.
+I will use methods which mimic observations, such as examining the surface power spectrum 
+as in Fig. \ref{fig:fig1}, to determine if changes in the stratification imprint on the convective
+motions in a way that is measurable at the solar photosphere.
 
 I will implement the basic nature of hydrogen ionization and recombination through the use of
 a nonlinear equation of state built around a single-atomic level model of particles,
 similar to that used in \cite{rast&toomre1993}.
 This work in year 2 will further be guided by prior studies on moist convection \citep{leconte&all2017},
-in which phase changes resulting in cloud formation are studied. We will examine the effects of
-hydrogen ionization on atmospheric stratification in two ways.  First, we will determine the effects of the
-\emph{location} of the ionizing layer in order to determine if we can naturally make transitions from
-stable regions (above) to convecting regions (below) occur, as occurs at the solar photosphere.  
-We will also determine
-the effects of the \emph{extent} of the ionizing layer, to determine if this changes the average length
-scale of convective elements, and to determine if there is any correlation between the length scale of convective
-elements driven at the surface, the atmospheric stratification, and the average power spectrum of motions near the
-surface. If large elements descend to the bottom of the convective zone and stay there, they could very
+in which phase changes resulting in cloud formation are studied. I will examine the effects of
+hydrogen ionization on atmospheric stratification in two ways.  First, I will determine how the
+location of the ionizing layer changes the convection, including studying domains in which the ionizing
+height is within the domain and others in which it is just outside of the domain.
+I will also study
+the effects of the vertical extent of the region of partial ionization, determining the differences in convective
+driving between a short and long transition from neutral to fully ionized hydrogen. I hypothesize that
+these two control parameters could likely change the driving scale of convective elements within the
+ionizing region.  If large elements descend to the bottom of the convective zone and stay there, they could very
 well restratify the atmosphere and prevent the generation of giant cells.
 
 
@@ -305,7 +309,7 @@ of roughly 20 million CPU-hours/year, so the proposed projects are feasible.
 
 
 \section{Relevance to NASA} 
-The proposed work fits with NASA's 2014 Strategic Plan objective
+The proposed work aligns with NASA's 2014 Strategic Plan objective
 1.4:
 ``Understand the Sun and its interactions with Earth and the solar
 system, including space weather.''  Specifically, I aim to help answer
@@ -323,8 +327,7 @@ clarification.
 
 This work has been motivated by data from the Helioseismic and Magnetic Imager (HMI) onboard
 the NASA Solar Dynamics Observtory (SDO) spacecraft 
-\citep{hanasoge&all2012, greer&all2015, hathaway&all2015}, and will continue to be informed by
-new helioiseismic measurements made from SDO data. This work will additionally be informed
+\citep{hanasoge&all2012, greer&all2015, hathaway&all2015}. This work will additionally be informed
 by the new measurements which will
 be made possible by the upcoming joint NASA-ESA Solar Orbiter's Polarimetric and 
 Helioseismic Imager (PHI), and will help explain conundrums arising from those observations.
