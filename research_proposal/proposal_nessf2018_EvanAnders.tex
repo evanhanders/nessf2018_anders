@@ -220,7 +220,7 @@ it would imply that the nature of Kramers' opacity helps lead to the lack of obs
 \vspace{-0.15cm}
 Convection is strongly driven at the solar surface in part by the ionization and recombination of hydrogen.
 This piece of physics is absent from many studies of solar convection. Instead, surface convection
-is often driven by either an imposed entropy draining layer at the upper boundary \citep{kapyla&all2017}, 
+is often driven by either an imposed entropy draining layer at the upper boundary \citep{kapyla&all2017}
 or the natural thermal boundary layer that forms near the upper surface \citep{anders&brown2017}.
 These methods have a considerable problem in that the size of low entropy
 convective elements which form at the surface are determined either by the pre-imposed size of the
@@ -228,33 +228,41 @@ entropy draining region or the natural size of the thermal boundary layer (which
 the opacity).
 
 The convective elements driven at the solar photosphere (granules) are large compared to the local
-thermal diffusion length scale.  Their size is likely determined by the vertical extent of the convective
+thermal diffusion length scale.  Their size is likely determined by the vertical extent of the local convective
 boundary layer, which in turn is partially set by the depth of hydrogen ionization.  The relatively large
-granular scale may drive convective elements whose size help them persist through the depth of the solar
-convection zone. If cool surface elements reach the base of the convection zone in tact, they could drastically
+scale of granules may drive convective elements whose size helps them remain coherent as they sink through the depth of the solar
+convection zone. If cool surface elements reach the base of the convection zone intact, they could drastically
 alter the mean stratification of the deep convective zone.  
-I aim to study the effect of hydrogen ionization on the stratification of convecting atmospheres.
-I will use methods which mimic observations, such as examining the surface power spectrum 
-as in Fig. \ref{fig:fig1}, to determine if changes in the stratification imprint on the convective
-motions in a way that is measurable at the solar photosphere.
+I aim to study this likely effect of hydrogen ionization on the stratification of convecting atmospheres.
+I will use methods which mimic observations, such as examining the surface velocity power spectrum 
+(e.g., Fig. \ref{fig:fig1}), to determine if hydrogen ionization modifies the stratification in a manner that
+is measurable at the solar photosphere through its impacts on the convective motions.
 
 I will implement the basic nature of hydrogen ionization and recombination through the use of
-a nonlinear equation of state built around a single-atomic level model of particles,
+a nonlinear equation of state built around a single-atomic-level model of particles,
 similar to that used in \cite{rast&toomre1993}.
-This work in year 2 will further be guided by prior studies on moist convection \citep{leconte&all2017},
+This work will further be guided by prior studies on moist convection \citep{leconte&all2017},
 in which phase changes resulting in cloud formation are studied. I will examine the effects of
 hydrogen ionization on atmospheric stratification in two ways.  First, I will determine how the
-location of the ionizing layer changes the convection, including studying domains in which the ionizing
-height is within the domain and others in which it is just outside of the domain.
+location of the ionizing layer changes the convection; I will study simulations in which the ionizing
+height is at various depths within the domain and others in which it is just outside of the domain.
 I will also study
-the effects of the vertical extent of the region of partial ionization, determining the differences in convective
-driving between a short and long transition from neutral to fully ionized hydrogen. I hypothesize that
-these two control parameters could likely change the driving scale of convective elements within the
-ionizing region.  If large elements descend to the bottom of the convective zone and stay there, they could very
+how the vertical extent of the region of partial ionization, the region in which hydrogen transitions
+from fully neutral to fully ionized, affects atmospheric stratification and convective driving.
+I hypothesize that, in the appropriate solar regime,
+these two control parameters likely change the driving scale of convective elements within the
+ionizing region. 
+
+In summary, in year 2 I will come to understand the role that hydrogen ionization plays in determining
+the length scale at which convective elements are driven at the solar photosphere.
+If large elements are driven at the surface and are capable of
+descending to the bottom of the convective zone, they could very
 well restratify the atmosphere and prevent the generation of giant cells.
 
 
+\vspace{-0.2cm}
 \section{Timeline of proposed work}
+\vspace{-0.2cm}
 \textbf{Year 1 (Fall 2018 - Summer 2019):}
 \begin{itemize}
 \vspace{-0.2cm}
@@ -270,6 +278,8 @@ Construct appropriate atmospheres for studying ionizing convection, and learn wh
 these atmospheres control different aspects of the evolved solutions.
 \end{itemize}
 
+\vspace{-0.2cm}
+\noindent
 \textbf{Year 2 (Fall 2019 - Spring 2020):}
 \begin{itemize}
 \vspace{-0.2cm}
@@ -280,7 +290,9 @@ Astrophysical Journal by the end of year 2019.
 Spring 2020.
 \end{itemize}
 
+\vspace{-0.2cm}
 \section{Numerical Tools and Feasibility}
+\vspace{-0.2cm}
 I will use the open-source Dedalus\footnote{\url{http://dedalus-project.org/}} pseudospectral framework 
 \citep{burns&all2016} to carry out my simulations.  
 Dedalus is a flexible solver of partial differential equations,
@@ -308,7 +320,9 @@ of roughly 20 million CPU-hours/year, so the proposed projects are feasible.
 
 
 
+\vspace{-0.2cm}
 \section{Relevance to NASA} 
+\vspace{-0.2cm}
 The proposed work aligns with NASA's 2014 Strategic Plan objective
 1.4:
 ``Understand the Sun and its interactions with Earth and the solar
@@ -333,7 +347,9 @@ be made possible by the upcoming joint NASA-ESA Solar Orbiter's Polarimetric and
 Helioseismic Imager (PHI), and will help explain conundrums arising from those observations.
 
 
+\vspace{-0.2cm}
 \section{Summary}
+\vspace{-0.2cm}
 Recent observations call into question our fundamental understanding of solar
 convection \citep{hanasoge&all2012, greer&all2015, hathaway&all2015}.
 We propose two focused, scoped studies of the mechanisms which drive the Sun's convection at
