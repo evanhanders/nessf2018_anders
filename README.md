@@ -1,8 +1,26 @@
 # README #
 
-This is the repository for Evan's 2018 NESSF proposal.
+This is the repository for Evan's 2018 NESSF proposal & NESSF19-R renewal proposal.
 
-### What are NASA's requirements for the proposal? ###
+
+### What are the requirements for NESSF19-R? ###
+
+All renewal proposals must use an easily read [typically 12-point] font of no more than 15 characters per horizontal inch, no more than 5.5 lines per vertical inch (i.e., single spaced), and at least one-inch margins on all sides. Non-compliant submissions may be returned without review.
+
+All submissions require that the NSPIRES cover pages be completed online, including a proposal summary/abstract and responses to the Program Specific Data questions, which includes the renewal proposal’s budget.
+
+In addition to filling out the NSPIRES web interface cover pages on line, renewal applications must include the elements 1-5 listed below, clearly identified, each starting on a new page, and appearing in the following order in a single PDF file:
+
+1. A progress report, of approximately three to six pages that summarizes the work accomplished during the previous year, relating the actual accomplishments with the plan originally outlined in the proposal and/or including any unanticipated opportunities, surprises, or unusual developments; and a description of plans for the coming year, including explanations of any substantial deviation from the plan originally outlined in the proposal.
+2. An updated schedule for completing the degree program.
+3. A signed letter of recommendation from the student’s PI, i.e., faculty advisor on institutional letterhead that must include the name of the student, the name of the proposing institution, and the renewal proposal title. If the student has more than one faculty advisor, the letter may be jointly signed or separate letters may be provided. If there will be a proposed PI change from the current NESSF award, then include a 2-page bio for the new PI. 
+4. Official or unofficial, legible, and clearly unaltered transcripts for any classes taken during the previous year. If all or part of the student’s Social Security Number or Date of Birth appears on the transcript, this MUST be blocked out prior to submission. This is the only alteration permitted to a transcript. If no classes were taken in the previous year, provide documentation from the University that the student is still enrolled for a graduate degree at the proposing university.
+5. A budget narrative explaining the amounts and why, i.e., details that support the request in Program Specific Data items 7 through 9. If exchanges or adjustments are being made between the stipend and allowance budgets, then provide supporting justifying documentation in addition to the summary. Another example requiring specifics, when the university is committing to reduce or waive tuition and fees for the student, specify that amount in the budget justification and a point of contact at the university who is not the PI or the student. If any travel is being proposed for field work; conferences; etc., then specify cost basis;, location(s); purposes; traveler name;, etc. Be specific about how the requested funds will be allocated and whether the student or the institution is the ultimate recipient. Do not request the full $45,000 in cases when the student will not be spending the funds over 12 months unless it can be fully documented as justified. For example, if the standard university stipend is $35,000 or greater in an academic year (9-10 months), provide the evidence of that fact. Remember to prorate and reduce stipend and allowances requests to account for known student absences of three months or greater.
+6. Optional High-End Computing Appendix. The HEC Appendix is a separate PDF file, so do not include it in the PDF file for items 1-5. See Appendix A of this solicitation for details on how to pursue this option. NOTE: If accepted, NASA will allocate this resource to the PI, so it should be the PI’s doing the HEC application  
+
+Reminder: All five of the required proposal elements, which are not part of the NSPIRES cover page forms or an optional HEC appendix, must be combined into a single PDF document and uploaded on the NSPIRES site for submission 
+
+### (2018) What are NASA's requirements for the proposal? ###
 
 New applications must include the elements listed below, clearly identified, starting on a
 new page, and appearing in the following order in a single PDF file:
