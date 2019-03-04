@@ -77,9 +77,10 @@ This recently published work has lead to fruitful discussions with multiple scie
 CU Boulder, both who are experts in rotating convection (Drs. Keith Julien and Ian Grooms)
 and who are experts in solar convection (Dr. Nick Featherstone), and potential collaborations
 with them may come forth as a result of this paper. I will describe these collaborations
-more fully in section \ref{sec:future_plans}.
+more fully in section \ref{sec:future_rotation}.
 
 \subsection{Unusual development: Specifying the Mach number with a Kramer's opacity}
+\label{sec:thermals}
 In addition to writing and publishing \citet{anders&all2019} during the fall of 2018, I 
 worked on the proposed work in our originally accepted NESSF, as quoted here:
 
@@ -142,7 +143,7 @@ these atmospheres control different aspects of the evolved solutions.
 
 \vspace{-0.2cm}
 \noindent
-\textbf{Year 2 (Fall 2019 - Spring 2020):}
+\textbf{Year 2 (Fall 2019 - Spring/Summer 2020):}
 \begin{itemize}
 \vspace{-0.2cm}
 \item Run simulations of ionizing convection, analyze data, and submit a paper to The
@@ -152,6 +153,61 @@ Astrophysical Journal by the end of year 2019.
 Spring 2020.
 \end{itemize}
 \end{quote}
+
+This general outline still holds true to my plans for the upcoming academic year: I will
+do research this summer and next fall, then graduate in the spring or early summer and 
+hopefully move on to a postdoctoral position at a new university.
+
+Currently, my plan is to work on the originally proposed research (modern, parameterized simulations
+of ionizing convection) in an effort to gain an understanding of the size of convective elements
+driven at the surface. However, due to the unexpected turns which arose over the past year,
+there are a few other projects that I may also investigate coincidentally with these
+ionizing simulations.  I have no misconceptions that I will be able to study \emph{all} of
+these projects over the next year, but it should be feasible to perhaps work on the initially
+proposed work as well as one of the following opportunities that has arisen in discussions
+with colleagues and collaborators over the past year.
+
+\subsection{Possible mini-project 1: Kramer's opacity thermals}
+In the study of thermals that I am currently conducting to learn about entrainment in the
+solar convective envelope (see section \ref{sec:thermals}), I am using a simple,
+constant-thermal-conductivity specification in order to study the simple underlying physics.
+Adding in a nonlinear, Kramer's-like opacity to these thermal simulations is trivial, and
+with the tools I have already developed it would be very easy to see if such a nonlinear
+opacity affects the magnitude of entrainment in these experiments measurably. Such a
+complication is beyond the scope of the current paper on stratified thermals, but this
+small, letter-length project would get closer to answering the questions I posed in project 1
+of my original application.
+
+\subsection{Possible mini-project 2: Continuing rotation work}
+\label{sec:future_rotation}
+As I mentioned earlier, the work published in \citet{anders&all2019} has potentially launched
+two future collaborations: one with Drs.~Julien and Grooms, and another with Dr. Featherstone.
+
+The first project would be a more careful study of the results that we published in
+\citet{anders&all2019} with the goal of determining \emph{what physical mechanism} is
+responsible for setting the Rossby number. Put differently, in our recent work we showed
+that, empirically, the Rossby number is fairly constant if you set your experiment up in the
+proper way that we describe, but the study with Drs.~Julien and Grooms could elucidate
+\emph{why} our prescription sets the Rossby number, and whether or not such a prescription
+is accurate in the solar regime. 
+
+The second possible collaboration here, with Dr. Featherstone, would use our results from
+simple cartesian domains and study them using turbulent convection simulations in spherical shells. 
+This work would help us understand if our results for setting the Rossby number are valid when
+flows become turbulent and when more complex geometries are present.
+
+\subsection{Possible mini-project 3: Accelerated evolution of stratified, overshooting convection}
+In my second paper, I studied a method of fast-forwarding through the long relaxation of the
+atmosphere's thermal structure in a simple, boussinesq convective system. A fellow graduate student
+in our research group and I have some promising first results of an extension of this method
+to stratified, compressible simulations. This method shows promise for saving millions, if
+not billions, of cpu-hours in future work by allowing computer time to be used on studying
+``useful'' parts of simulations (in which the thermal structure is relaxed and the convective
+flows are no longer rearranging it) rather than transient phases. I worked through much of the
+intricate details of this project over a year ago, but have since been more invested in other
+projects, and returning to this project could produce great results with little extra input
+effort compared to most of the other projects presented here.
+
 
 %
 %\section{Proposed Project}
