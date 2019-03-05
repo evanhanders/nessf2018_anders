@@ -32,6 +32,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \cfoot{\footnotesize{\thepage}}
 
+\graphicspath{{./}{figs/}}
 
 
 
@@ -55,34 +56,59 @@ in the original research plan. I will describe both
 of these below, including how they are informing the work of spring and summer 2019.
 
 \subsection{Unanticipated opportunity: Predicting the Rossby number in rotating systems}
-During the summer of 2018, I helped mentor a post-baccalaureate researcher on a project
-studying rotating convection. This student left our research group for industry at the end of
-the summer, but the project she had been working on had progressed to a point where
-its results were promising and nearing publication significance. I took responsibility for
-this project in the late summer of 2018 and throughout fall 2019, and it has since been published
-in The Astrophysical Journal \citep{anders&all2019}.
+Preliminary work into rotating convection in our research group revealed some interesting results
+during the summer of 2018, and I chose to gain a greater understanding of these results and
+publish them during fall 2018. This work was recenly published in 
+The Astrophysical Journal \citep{anders&all2019}.
 
-Recent work by \cite{featherstone&hindman2016} suggests that rotational effects could be
+Recent work by e.g., \citet{featherstone&hindman2016} suggests that rotational effects could be
 one possible solution or explanation
 to the ``Solar Convective Conundrum,'' the apparent absence of large-scale motions at the
-solar photosphere and the focus of my NESSF proposal. More specifically, they posit that flows
-in the deep solar convective interior could be very rotationally constrained, or at very low
-Rossby number. The Rossby number is an output parameter in convective simulations and hard
-to specify in the initial conditions, but in our recently published work, \citet{anders&all2019}, 
-we demonstrated a manner of specifying the Rossby number of simulations \emph{a priori},
-and showed that this specification was fairly robust in the low-Rossby number limit, which
-is of potential interest for the solar interior.
+solar photosphere and the focus of my NESSF proposal. More specifically, if flows
+in the deep solar convective interior are heavily influenced by the rotation of the Sun, they
+may not manifest themselves in the way that traditional mixing length theory or simulations
+predict. If rotation is the dominant force on these deep convective flows, they are
+at very low \emph{Rossby number} (Ro). Unfortunately, Ro is an \emph{output} parameter
+in convective simulations and it is difficult to specify its value \emph{a priori}.
+In our recently published work, \citet{anders&all2019}, 
+we demonstrated a manner of specifying the Rossby number of simulations in the initial
+conditions, as we demonstrate in Fig.~\ref{fig:rossby}, which is Figure 1 of 
+\citet{anders&all2019}.
 
-This recently published work has lead to fruitful discussions with multiple scientists at
-CU Boulder, both who are experts in rotating convection (Drs. Keith Julien and Ian Grooms)
-and who are experts in solar convection (Dr. Nick Featherstone), and potential collaborations
-with them may come forth as a result of this paper. I will describe these collaborations
+This recently published work has lead to fruitful discussions with multiple scientists across
+campus at CU Boulder, including those who are experts in rotating convection 
+(Drs.~Keith Julien and Ian Grooms)
+and also experts in solar convection simulations (Dr. Nick Featherstone).
+These discussions have led to potential collaborations which further explore the results
+of \citet{anders&all2019}, and I will describe these possibilities
 more fully in section \ref{sec:future_rotation}.
 
-\subsection{Unusual development: Specifying the Mach number with a Kramer's opacity}
+\begin{figure}[b!]
+\centering
+\includegraphics[width=\textwidth]{parameter_space.pdf}
+\caption{Figure 1 of \citet{anders&all2019} is shown. In (a), we show the parameter space
+of rotating convection, with Rayleigh number (Ra, ratio of buoyant driving to diffusive damping)
+on the $y$-axis and the Taylor number (Ta, strength of rotation compared to diffusive damping)
+on the $x$-axis. We also show three types of ``paths'' through this space that simulations
+can walk in blue (constant supercriticality, $\mathcal{S}$), green
+(constant ``convective Rossby number,'' Ro$_{\text{c}}$), and orange 
+(constant ``predictive Rossby number,'' Ro$_{\text{p}}$). 
+In (b), we show that along the orange paths, at
+constant Ro$_\text{p}$, the evolved Rossby number (Ro) of simulations is
+roughly constant across orders of magnitude of Ra, while the other two paths show
+increasing or decreasing Ro. In (c), we show that the evolved Rossby number
+is roughly a function of the predictive Rossby number alone, and not significantly a function
+of the commonly-used Ro$_{\text{c}}$. These results imply that by choosing the value of
+Ro$_\text{p}$ and walking along these paths in parameter space, the degree of rotational
+constraint of simulations can be chosen by construction.
+\label{fig:rossby}}
+\end{figure}
+
+%\newpage
+\subsection{Convection with Kramer's opacity and thermals}
 \label{sec:thermals}
-In addition to writing and publishing \citet{anders&all2019} during the fall of 2018, I 
-worked on the proposed work in our originally accepted NESSF, as quoted here:
+During the fall of 2018, I additionally
+worked on ``project 1'' in our original NESSF proposal, as quoted here:
 
 \begin{quote}
 ``Conduct literature review on convection with Kramers' opacity early fall 2018.  
@@ -93,43 +119,47 @@ on the nature of convection with Kramers' opacity at both low and high Mach numb
 end of spring 2019.''
 \end{quote}
 
-Unfortunately, we learned that while using realistic free-free Kramer's opacity scalings with
-temperature and density, it is difficult if not impossible to study low-Mach-number convection
-in a simple simulation. We expect very low Mach number flows in the deep solar interior where
-such a Kramer's opacity prescription is valid, but the true Sun has a complex photosphere and
-vast density stratification that also lead to these effects. We concluded that the originally
-proposed Kramer's-opacity-convection simulations required additional layers of complexity 
-(e.g., artificial surface cooling) that would muddle our understanding of the fundamental
-physics we wanted to study (entrainment of warm fluid into cold downflows and the resultant
-restratification caused by this).
+Through this preliminary work, I have realized that the fundamental process that I proposed
+to study is that of \emph{entrainment}, and that the initially proposed project is too complex
+of a starting point for a detailed study of this phenomenon. 
+Recently, Dr. Daniel Lecoanet (Princeton) has performed an in-depth study of entrainment 
+in Boussinesq thermals \citep[][in review]{lecoanet&jeevanjee2018}. A thermal is a region of
+cold (or hot) fluid that evolves from rest according to buoyant forces, and they were able to
+easily study entrainment in these thermals in both the laminar and turbulent regime.
+I have formed a collaboration with Dr. Lecoanet in order to extend his work to study 
+entrainment of thermals in stratified domains under the fully compressible equations.
+These simulations are, in some way, a simple model of the ``entropy rain'' proposed by
+\citet{brandenburg2016}, and understanding how the complexities of the fully compressible equations
+and highly stratified domains will be important to understanding whether or not the entropy
+rain hypothesis is vald.
 
-Rather than studying the complex Kramer's opacity convection as in \citet{kapyla&all2017},
-we have pursued a more focused study of entrainment mechanisms in the solar convection zone.
-Recently, Dr. Daniel Lecoanet has performed an in-depth study of entrainment in Boussinesq
-thermals \citep[][in review]{lecoanet&jevanjee2018}. I have formed a collaboration with 
-Dr. Lecoanet in order to extend his work to a case more applicable to the solar context and
-the original research questions of interest. Since late fall 2018, we have been studying
-the evolution and entrainment of cold thermals in stratified domains. This effort is partially
-motivated by the work of \citet{brandenburg2016}, in which that author described the effects
-of ``entropy rain'' as one possible mechanism for resolving the solar convective conundrum.
-In \citet{brandenburt2016}, the author studies propagating buoyantly-neutral propagating
-vortex rings as one possible dynamical manifestation of this rain.
+I have been studying stratified thermals since late fall 2018, and currently have a
+fully functioning code for simulating and analyzing thermals, as in Fig.~\ref{fig:thermals}.
+We aim to come up with a robust theory of the behavior of laminar thermals 
+(Reynolds number [Re] $\sim$ 600, Fig.~\ref{fig:thermals})
+which describes the downwards propagation and entrainment of these fluid regions regardless
+at both small and large stratification. Once we fully understand this theory, we will
+study whether this linear theory describes the evolution of turbulent thermals (Re $\sim$ 6000),
+whose evolution more accurately reflects that of the solar context. This work should be
+submitted for publication by the end of spring 2019.
 
-The collaboration between myself and Dr.~Lecoanet is an extension of his own Boussinesq work
-and the work of Brandenburg. Rather than studying neutrally-buoyant vortex rings, we are studying
-buoyant thermal perturbations which self-consistently evolve into propagating vortex rings
-in which we can carefully quantify the degree to which warm fluid is entrained into these
-structures and the manner in which the buoyant vortex rings interact with the strong
-density stratification of the solar convection zone. We aim to extend the simple linear theory
-of the Boussinesq case to the more-complex fully compressible, stratified case, and we also
-plan to study the differences in entrainment in the case of laminar flows (which are more
-typical of standard simulations) and turbulent flows (which are more typical of the true
-Sun). In the simple, single-thermal systems we are studying, we are capable of resolving
-much more turbulent flows than typical simulations of solar-like convection, and we can more
-adequately answer whether entrainment in these structures is a primarily laminar or turbulent
-process.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{thermal_snapshot.pdf}
+\caption{Snapshots of the vertical velocity fields late in the evolution of thermals with
+characteristic Reynolds numbers of 600 are shown. From left to right, the atmosphere through
+which the thermal is falling is stratified by $n_\rho = [0.1, 0.5, 1, 2, 3, 4, 5]$ density
+scale heights, so the simulation on the left is essentially in the Boussinesq limit of
+\citet{lecoanet&jeevanjee2018} and the simulation on the right is highly stratified. The thermal
+tracking algorithm of \citet{lecoanet&jeevanjee2018} has been extended to work robustly in 
+stratified domains, and the black outlines show the boundaries of the thermal obtained by
+this algorithm. These are 3D simulations, and these are cuts of the $y-z$ at $x = 0$.
+\label{fig:thermals}}
+\end{figure}
 
-\section{Future plans for 2019-2020 work and deviations from the original plan}
+
+
+\section{Future plans for 2019-2020}
 \label{sec:future_plans}
 Forthcoming work according to the original proposal is as follows:
 
@@ -156,16 +186,17 @@ Spring 2020.
 
 This general outline still holds true to my plans for the upcoming academic year: I will
 do research this summer and next fall, then graduate in the spring or early summer and 
-hopefully move on to a postdoctoral position at a new university.
+move on to a postdoctoral position at a new university.
 
 Currently, my plan is to work on the originally proposed research (modern, parameterized simulations
 of ionizing convection) in an effort to gain an understanding of the size of convective elements
 driven at the surface. However, due to the unexpected turns which arose over the past year,
 there are a few other projects that I may also investigate coincidentally with these
-ionizing simulations.  I have no misconceptions that I will be able to study \emph{all} of
-these projects over the next year, but it should be feasible to perhaps work on the initially
+ionizing simulations.  While it would be impossible to study all three of the following
+projects coincidentally with ionizing convection, 
+it should be feasible to work on the initially
 proposed work as well as one of the following opportunities that has arisen in discussions
-with colleagues and collaborators over the past year.
+with colleagues and collaborators over the past year:
 
 \subsection{Possible mini-project 1: Kramer's opacity thermals}
 In the study of thermals that I am currently conducting to learn about entrainment in the
@@ -175,252 +206,31 @@ Adding in a nonlinear, Kramer's-like opacity to these thermal simulations is tri
 with the tools I have already developed it would be very easy to see if such a nonlinear
 opacity affects the magnitude of entrainment in these experiments measurably. Such a
 complication is beyond the scope of the current paper on stratified thermals, but this
-small, letter-length project would get closer to answering the questions I posed in project 1
-of my original application.
+small, letter-length project would probe the same scientific answer as my originally proposed
+project 1: \emph{does a nonlinear, solar-like opacity reduce entrainment in cold downflows?}
 
 \subsection{Possible mini-project 2: Continuing rotation work}
 \label{sec:future_rotation}
 As I mentioned earlier, the work published in \citet{anders&all2019} has potentially launched
-two future collaborations: one with Drs.~Julien and Grooms, and another with Dr. Featherstone.
-
-The first project would be a more careful study of the results that we published in
-\citet{anders&all2019} with the goal of determining \emph{what physical mechanism} is
+launched future collaborations with, e.g., Drs.~Julien, Grooms, and/or Featherstone.
+Working alongside these experts, I could further study the results published in
+\citet{anders&all2019} with the goal of determining what physical mechanism is
 responsible for setting the Rossby number. Put differently, in our recent work we showed
-that, empirically, the Rossby number is fairly constant if you set your experiment up in the
-proper way that we describe, but the study with Drs.~Julien and Grooms could elucidate
-\emph{why} our prescription sets the Rossby number, and whether or not such a prescription
-is accurate in the solar regime. 
-
-The second possible collaboration here, with Dr. Featherstone, would use our results from
-simple cartesian domains and study them using turbulent convection simulations in spherical shells. 
-This work would help us understand if our results for setting the Rossby number are valid when
-flows become turbulent and when more complex geometries are present.
+that, empirically, the Rossby number is fairly constant if you hold the ``predictive
+Rossby number'' constant. A follow-up project would aim to
+understand the physical mechanism in the Navier-Stokes equations that leads to this
+result, and understand if the Rossby number can be predicted in the solar regime.
 
 \subsection{Possible mini-project 3: Accelerated evolution of stratified, overshooting convection}
-In my second paper, I studied a method of fast-forwarding through the long relaxation of the
+In my second paper \citep{anders&all2018}, I studied a method of fast-forwarding through the long relaxation of the
 atmosphere's thermal structure in a simple, boussinesq convective system. A fellow graduate student
 in our research group and I have some promising first results of an extension of this method
-to stratified, compressible simulations. This method shows promise for saving millions, if
-not billions, of cpu-hours in future work by allowing computer time to be used on studying
+to stratified, compressible simulations, and I could follow up on these results without
+too much time investment. This method shows promise for saving millions 
+of cpu-hours in future work by allowing computer time to be used on studying
 ``useful'' parts of simulations (in which the thermal structure is relaxed and the convective
-flows are no longer rearranging it) rather than transient phases. I worked through much of the
-intricate details of this project over a year ago, but have since been more invested in other
-projects, and returning to this project could produce great results with little extra input
-effort compared to most of the other projects presented here.
+flows are no longer rearranging it) rather than transient phases. 
 
-
-%
-%\section{Proposed Project}
-%In simulations of convection, motions are often driven by enforced boundary conditions
-%on the thermodynamic state.  Boundary layers at the top and bottom of the atmosphere naturally arise,
-%and convection is strongly driven within those boundary layers.  Convective driving in the Sun is more
-%complex. A positive radial gradient of opacity within the Sun decreases how efficiently radiation carries
-%the solar luminosity with increasing height in the convection zone.
-%This results in a divergence of radiative flux which deposits
-%energy in the convective layers, and this energy must in turn be carried by convective motions.
-%In other words, the convection in the Sun is not driven by a sharp lower boundary but rather
-%through naturally occuring internal heating.
-%Further, the upper boundary layer of the solar convective zone arises because of 
-%radiative losses at the photosphere paired with the ionization and 
-%recombination of hydrogen, not because of an imposed wall at the solar photosphere. These
-%two effects -- the internal driving of solar convection by opacity effects 
-%and the driving of convection at the solar surface 
-%by hydrogen ioniziation -- have not been fully explored in recent literature.
-%
-%The exciting work of \cite{kapyla&all2017}
-%exhibited atmospheres in which deep layers of the convection
-%zone are stable, a setup in which giant cells would not be driven.  
-%The authors attribute these deep, stable layers to their inclusion of Kramers' opacity
-%effects which drive convection internally in a manner similar to that in the Sun.  
-%However, forthcoming work by my advisor and collaborators (Brown et al. 2018 in prep, Oishi et al. 2018 in prep) 
-%shows that 
-%stable lower-layers of convective zones naturally arise where stable regions lie below convection
-%zones and convective motions are at low Mach number.
-%Further, first results from work that I am conducting on stratified, internally
-%heated convection (modeled after simpler studes, e.g., \cite{goluskin&spiegel2012}),
-%show that these stable convecting layers arise naturally when internal heating is the mechanism which
-%drives convection, even when realistic opacities are not used.
-%
-%Since the process of internal heating -- not the complex form of a Kramers' opacity --
-%appears to be the fundamental cause of the stratification effects seen recently by \cite{kapyla&all2017},
-%the first project that I propose in year 1 is a careful study of the effects of Kramers' opacity on convection.
-%The second project I propose in year 2 is a careful study of the effects of hydrogen ionization near the surface
-%of the Sun, building on the previous work of e.g., \cite{rast&toomre1993}.
-%
-%\vspace{-0.25cm}
-%\subsection{Project 1: Effect of Kramers' opacity on solar convection}
-%\vspace{-0.15cm}
-%The transport of heat within an optically thick atmosphere, in the absence of convective transport,
-%is often quantified by Fourier's law of conduction \citep{lecoanet&all2014}, in which the radiative
-%flux is proportional to the conductivity and the temperature gradient.  
-%Many careful studies of convection employ a constant radiative conductivity.
-%While a constant conductivity in time and space allows for the creation of simple measurements of the
-%heat transport in the evolved atmosphere, such an assumption about
-%the conductivity is coupled with unrealistic assumptions regarding the functional form of the opacity.  
-%
-%A constant radiative
-%conductivity is the go-to choice for many in the physics community who study incompressible
-%\RB convection; however, it is often not the choice for those in the heliophysics or astrophysics
-%communities.  Instead, these communities generally employ a radiative conductivity which is a function
-%of the temperature, density, and the Kramers' opacity \citep{barekat&brandenburg2014, brandenburg2016, kapyla&all2017}.
-%As a result, the conductivity varies greatly throughout the depth of the atmosphere, which 
-%more carefully models natural physics but also makes the solution harder to interpret.
-%
-%In order to study the importance of Kramers' opacity, a frame of reference must be constructed
-%in which to study this varying opacity. For example, what atmospheric parameter determines the Mach number
-%of evolved flows?  At what value of the Rayleigh number
-%does convection turn on (and thus, at what \emph{supercriticality} are simulations in past studies)?
-%What are the parameters of the initial state that determine key quantities
-%of the evolved convection, and what can we learn about the evolved dynamics from them?
-%Only by answering these simple questions can a careful study of Kramers' opacity be carried out.
-%Through answering similar questions about basic polytropic systems, I was able to determine that
-%regardless of Mach number, basic stratified compressible convection \emph{transports heat
-%in the same manner as unstratified, incompressible \RB convection} \citep{anders&brown2017}.
-%
-%After determining how to carry out controlled experiments studying the role of Kramers' opacity,
-%I will study the importance of the nonlinear nature of this opacity on convection.
-%In downflows (where density is high and temperature is low), the radiative conductivity
-%should be low compared to upflows.
-%However, at low Mach number, where fluctuations in temperature and density are small,
-%we anticipate that this effect will be unimportant.  In the Sun,
-%the Mach number of convection ranges from nearly Mach 1 at the surface to O($10^{-5}$) in the
-%deep interior.  Thus, it is important to understand how this
-%complex form of opacity interacts with convection at both high and low Mach number in order to understand
-%how it influences solar convection.
-%
-%In summary, my goal in year 1 is to quantify the importance of the varying opacity felt by
-%solar convection. I aim to understand the importance of
-%nonlinearities in the opacity on nonlocal convective transport and atmospheric stratification.  If
-%comparatively high opacity in the downflows enhances the importance of nonlocal transport at
-%all Mach numbers, then the ``entropy rain'' addition to convective theory expanded by
-%\cite{brandenburg2016} and explored by \cite{kapyla&all2017} could be an essential element
-%of solar convection.  Nonlocal transport mechanisms of this nature 
-%could drastically change the stratification of deep convection. If marginal stability in the deep 
-%convection zone is achieved because of nonlocal transport effects associated with this opacity,
-%it would imply that the nature of Kramers' opacity helps lead to the lack of observed giant cells.
-%
-%\vspace{-0.25cm}
-%\subsection{Project 2: Solar convection influenced by hydrogen ionization and recombination}
-%\vspace{-0.15cm}
-%Convection is strongly driven at the solar surface in part by the ionization and recombination of hydrogen.
-%This piece of physics is absent from many studies of solar convection. Instead, surface convection
-%is often driven by either an imposed entropy draining layer at the upper boundary \citep{kapyla&all2017}
-%or the natural thermal boundary layer that forms near the upper surface \citep{anders&brown2017}.
-%These methods have a considerable problem in that the size of low entropy
-%convective elements which form at the surface are determined either by the pre-imposed size of the
-%entropy draining region or the natural size of the thermal boundary layer (which depends on
-%the opacity).
-%
-%The convective elements driven at the solar photosphere (granules) are large compared to the local
-%thermal diffusion length scale.  Their size is likely determined by the vertical extent of the local convective
-%boundary layer, which in turn is partially set by the depth of hydrogen ionization.  The relatively large
-%scale of granules may drive convective elements whose size helps them remain coherent as they sink through the depth of the solar
-%convection zone. If cool surface elements reach the base of the convection zone intact, they could drastically
-%alter the mean stratification of the deep convective zone.  
-%I aim to study this likely effect of hydrogen ionization on the stratification of convecting atmospheres.
-%I will use methods which mimic observations, such as examining the surface velocity power spectrum 
-%(e.g., Fig. \ref{fig:fig1}), to determine if hydrogen ionization modifies the stratification in a manner that
-%is measurable at the solar photosphere through its impacts on the convective motions.
-%
-%I will implement the basic nature of hydrogen ionization and recombination through the use of
-%a nonlinear equation of state built around a single-atomic-level model of particles,
-%similar to that used in \cite{rast&toomre1993}.
-%This work will further be guided by prior studies on moist convection \citep{leconte&all2017},
-%in which phase changes resulting in cloud formation are studied. I will examine the effects of
-%hydrogen ionization on atmospheric stratification in two ways.  First, I will determine how the
-%location of the ionizing layer changes the convection; I will study simulations in which the ionizing
-%height is at various depths within the domain and others in which it is just outside of the domain.
-%I will also study
-%how the vertical extent of the region of partial ionization, the region in which hydrogen transitions
-%from fully neutral to fully ionized, affects atmospheric stratification and convective driving.
-%I hypothesize that, in the appropriate solar regime,
-%these two control parameters likely change the driving scale of convective elements within the
-%ionizing region. 
-%
-%In summary, in year 2 I will come to understand the role that hydrogen ionization plays in determining
-%the length scale at which convective elements are driven at the solar photosphere.
-%If large elements are driven at the surface and are capable of
-%descending to the bottom of the convective zone, they could very
-%well restratify the atmosphere and prevent the generation of giant cells.
-%
-%
-%\vspace{-0.2cm}
-%\section{Timeline of proposed work}
-%\vspace{-0.2cm}
-%\textbf{Year 1 (Fall 2018 - Summer 2019):}
-%\begin{itemize}
-%\vspace{-0.2cm}
-%\item \emph{Project 1:} Conduct literature review on convection with Kramers' opacity early fall 2018.  
-%Understand past work done, and implement fully compressible equations with Kramers'
-%opacity in simple atmospheres.  Understand how to control the Mach number in these
-%atmospheres by end of year 2018.  Run simulations, analyze data, and submit a paper to The Astrophysical Journal
-%on the nature of convection with Kramers' opacity at both low and high Mach number by
-%end of spring 2019.
-%\vspace{-0.2cm}
-%\item \emph{Project 2:} Conduct literature review on past work done on ionizing convection and moist convection.
-%Construct appropriate atmospheres for studying ionizing convection, and learn what properties of
-%these atmospheres control different aspects of the evolved solutions.
-%\end{itemize}
-%
-%\vspace{-0.2cm}
-%\noindent
-%\textbf{Year 2 (Fall 2019 - Spring 2020):}
-%\begin{itemize}
-%\vspace{-0.2cm}
-%\item  \emph{Project 2:} Run simulations of ionizing convection, analyze data, and submit a paper to The
-%Astrophysical Journal by the end of year 2019.
-%\vspace{-0.2cm}
-%\item \emph{Academic progression:} Combine work from five published (or submitted) papers into a thesis, to be defended at the end of 
-%Spring 2020.
-%\end{itemize}
-%
-%\vspace{-0.2cm}
-%\section{Numerical Tools and Feasibility}
-%\vspace{-0.2cm}
-%I will use the open-source Dedalus\footnote{\url{http://dedalus-project.org/}} pseudospectral framework 
-%\citep{burns&all2016} to carry out my simulations.  
-%Dedalus is a flexible solver of partial differential equations,
-%making it extremely easy to study diverse sets of equations under many different atmospheric
-%constraints.  I have already published one paper using this tool \citep{anders&brown2017}
-%and am now adept at using it to create suites of simulations
-%in short time frames. Our run scripts for using Dedalus to study stratified atmospheres
-%are themselves publically available\footnote{\url{https://bitbucket.org/exoweather/polytrope}}.
-%By using an open-source code base and opening our run scripts to the community, we hope to
-%make our results reproduceable and decrease barriers for future users in 
-%\emph{extending} our studies towards a more complete understanding of convection.
-%
-%
-%I will primarily study 2D convective solutions in plane-parallel atmospheres in order to gain
-%intuition about the mean behavior of vertical profiles within the atmosphere.  Once I have a grasp
-%on how my measurements vary in 2D across parameter space, I will run select 3D simulations to
-%verify whether or not that behavior holds in 3D, as I did in my previous paper \citep{anders&brown2017}.
-%In cases where 2D and 3D diverge, I will quantify how and why they do so.
-%By primarily studying in 2D, and by carefully
-%selecting my 3D runs once I know which parameters I must examine more carefully, I can complete
-%a full suite of simulations, such as those in my previous paper \citep{anders&brown2017}, using
-%roughly 10 million CPU-hours.  Through my advisor, I have access to an allocation on NASA Pleiades
-%of roughly 20 million CPU-hours/year, so the proposed projects are feasible.
-%
-%
-%
-%
-%\vspace{-0.2cm}
-%\section{Summary}
-%\vspace{-0.2cm}
-%Recent observations call into question our fundamental understanding of solar
-%convection \citep{hanasoge&all2012, greer&all2015, hathaway&all2015}.
-%We propose two focused, scoped studies of the mechanisms which drive the Sun's convection at
-%the solar photosphere and deep in the interior.
-%These studies will carefully probe the effects of hydrogen ionization and Kramers' opacity, comparing
-%convective simulations with these elements to simpler studies without them.
-%Due to the developed nature of
-%our computational tool, Dedalus, and extensive experience using that tool \citep{anders&brown2017},
-%the simulations for these projects can be implemented and
-%carried out on short time scales, and the body of work proposed here will be finished within
-%two years.
-%
-
-\newpage
-\bibliographystyle{apj}
+\bibliographystyle{apj_title}
 \bibliography{biblio}
 \end{document}
