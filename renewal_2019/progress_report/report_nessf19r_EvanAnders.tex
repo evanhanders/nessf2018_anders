@@ -90,17 +90,18 @@ more fully in section \ref{sec:future_rotation}.
 of rotating convection, with Rayleigh number (Ra, ratio of buoyant driving to diffusive damping)
 on the $y$-axis and the Taylor number (Ta, strength of rotation compared to diffusive damping)
 on the $x$-axis. We also show three types of ``paths'' through this space that simulations
-can walk in blue (constant supercriticality, $\mathcal{S}$), green
+can follow in blue (constant supercriticality, $\mathcal{S}$), green
 (constant ``convective Rossby number,'' Ro$_{\text{c}}$), and orange 
 (constant ``predictive Rossby number,'' Ro$_{\text{p}}$). 
 In (b), we show that along the orange paths, at
 constant Ro$_\text{p}$, the evolved Rossby number (Ro) of simulations is
 roughly constant across orders of magnitude of Ra, while the other two paths show
 increasing or decreasing Ro. In (c), we show that the evolved Rossby number
-is roughly a function of the predictive Rossby number alone, and not significantly a function
+is roughly a function of Ro$_\text{p}$ alone, and not significantly a function
 of the commonly-used Ro$_{\text{c}}$. These results imply that by choosing the value of
 Ro$_\text{p}$ and walking along these paths in parameter space, the degree of rotational
-constraint of simulations can be chosen by construction.
+constraint of simulations can be chosen by construction. If the solar interior is, in fact,
+at low Ro, this finding allows us to probe that dynamical regime.
 \label{fig:rossby}}
 \end{figure}
 
@@ -128,32 +129,37 @@ cold (or hot) fluid that evolves from rest according to buoyant forces, and they
 easily study entrainment in these thermals in both the laminar and turbulent regime.
 I have formed a collaboration with Dr. Lecoanet in order to extend his work to study 
 entrainment of thermals in stratified domains under the fully compressible equations.
-These simulations are, in some way, a simple model of the ``entropy rain'' proposed by
-\citet{brandenburg2016}, and understanding how the complexities of the fully compressible equations
+These simulations are, in some way, a simple model of a phenomenon that some believe to be
+a solution to the Solar Convective Conundrum: ``entropy rain,'' as described by
+\citet{brandenburg2016}. These simple thermal simulations will allow us to
+understanding how the complexities of the fully compressible equations
 and highly stratified domains will be important to understanding whether or not the entropy
 rain hypothesis is vald.
 
+\newpage
 I have been studying stratified thermals since late fall 2018, and currently have a
 fully functioning code for simulating and analyzing thermals, as in Fig.~\ref{fig:thermals}.
 We aim to come up with a robust theory of the behavior of laminar thermals 
 (Reynolds number [Re] $\sim$ 600, Fig.~\ref{fig:thermals})
-which describes the downwards propagation and entrainment of these fluid regions regardless
+which describes the downward propagation and entrainment of these fluid regions 
 at both small and large stratification. Once we fully understand this theory, we will
 study whether this linear theory describes the evolution of turbulent thermals (Re $\sim$ 6000),
-whose evolution more accurately reflects that of the solar context. This work should be
-submitted for publication by the end of spring 2019.
+whose evolution more accurately reflects that of the solar context. This work will be
+submitted for publication by the end of spring 2019, as laid out in the original NESSF timeline.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{thermal_snapshot.pdf}
-\caption{Snapshots of the vertical velocity fields late in the evolution of thermals with
-characteristic Reynolds numbers of 600 are shown. From left to right, the atmosphere through
+\caption{Snapshots of the vertical velocity field in the $y-z$ plane of 3D simulations are shown
+at late times in the evolution of laminar thermals (Reynolds number $\sim$ 600).
+From left to right, the atmosphere through
 which the thermal is falling is stratified by $n_\rho = [0.1, 0.5, 1, 2, 3, 4, 5]$ density
 scale heights, so the simulation on the left is essentially in the Boussinesq limit of
 \citet{lecoanet&jeevanjee2018} and the simulation on the right is highly stratified. The thermal
 tracking algorithm of \citet{lecoanet&jeevanjee2018} has been extended to work robustly in 
 stratified domains, and the black outlines show the boundaries of the thermal obtained by
-this algorithm. These are 3D simulations, and these are cuts of the $y-z$ at $x = 0$.
+this algorithm. These preliminary simulations are informing work that will be submitted for
+publication by the end of spring 2019.
 \label{fig:thermals}}
 \end{figure}
 
@@ -202,16 +208,18 @@ with colleagues and collaborators over the past year:
 In the study of thermals that I am currently conducting to learn about entrainment in the
 solar convective envelope (see section \ref{sec:thermals}), I am using a simple,
 constant-thermal-conductivity specification in order to study the simple underlying physics.
-Adding in a nonlinear, Kramer's-like opacity to these thermal simulations is trivial, and
+Adding in a nonlinear, Kramer's-like opacity to these thermal simulations is numerically
+trivial, and
 with the tools I have already developed it would be very easy to see if such a nonlinear
-opacity affects the magnitude of entrainment in these experiments measurably. Such a
-complication is beyond the scope of the current paper on stratified thermals, but this
+opacity affects the magnitude of entrainment in these experiments. Such a
+complication is beyond the scope of the current paper on stratified thermals 
+(e.g., Fig.~\ref{fig:thermals}), but this
 small, letter-length project would probe the same scientific answer as my originally proposed
 project 1: \emph{does a nonlinear, solar-like opacity reduce entrainment in cold downflows?}
 
 \subsection{Possible mini-project 2: Continuing rotation work}
 \label{sec:future_rotation}
-As I mentioned earlier, the work published in \citet{anders&all2019} has potentially launched
+As I mentioned earlier, the work published in \citet{anders&all2019} has potentially
 launched future collaborations with, e.g., Drs.~Julien, Grooms, and/or Featherstone.
 Working alongside these experts, I could further study the results published in
 \citet{anders&all2019} with the goal of determining what physical mechanism is
